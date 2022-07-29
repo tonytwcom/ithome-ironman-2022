@@ -1,0 +1,520 @@
+html,
+body {
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+#container-all {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.banner {
+    height: 420px;
+    background-image: url('./banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    flex: 0 0 auto;
+}
+
+.main {
+    /* height: 100%; */
+    flex: 1 0 auto;
+    /* padding-bottom: 800px; */
+    /* border: 3px solid red; */
+    /* padding-top: 50px ; */
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    /* padding-bottom: 500px; */
+    /* background: #000; */
+    /* background: red; */
+}
+
+footer {
+    flex: 0 0 auto;
+}
+
+h2 {
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+/*body {
+  height: 100%;
+  color: #333;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.breadcrumb {
+    background: #000;
+    text-decoration: none;
+}
+
+.quote {
+    background: #e7e9eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.primary {
+    background-color: #00569e;
+}
+
+.radius {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.item {
+    margin: 2rem 0;
+    padding: 30px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* box-shadow: 5px 10px 8px #888888; */
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+}
+
+.path {
+    padding: 1rem 0 0 2rem;
+}
+
+.path a {
+    text-decoration: none;
+}
+
+.fa-center {
+    /* border: 1px solid #000; */
+    display: inline-block;
+}
+
+.btns-icon {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.btns-icon:hover {
+    background-color: RoyalBlue;
+}
+
+.btns-pressed {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #00569e;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.btns-pressed:hover {
+    background-color: #00b5f8;
+}
+
+.btns-pressed:active {
+    background-color: #47c5fb;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btns-download {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btns-download:hover {
+    background-color: RoyalBlue;
+}
+
+.btns {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px; /* 圓角 */
+    /* box-shadow: 5px 10px 18px #888888; */
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Button 基本色 */
+.success {
+    background-color: #04aa6d;
+}
+.success:hover {
+    background-color: #333;
+}
+.info {
+    background-color: #2196f3;
+}
+.info:hover {
+    background-color: #333;
+}
+.warning {
+    background-color: #ff9800;
+}
+.warning:hover {
+    background-color: #333;
+}
+.danger {
+    background-color: #f44336;
+}
+.danger:hover {
+    background-color: #333;
+}
+.default {
+    background-color: #e7e7e7;
+    color: black;
+}
+.default:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Button 日系色 */
+.jp-success {
+    background-color: #6a8372;
+}
+.jp-success:hover {
+    background-color: #4a593d;
+}
+.jp-info {
+    background-color: #58b2dc;
+}
+.jp-info:hover {
+    background-color: #0089a7;
+}
+.jp-warning {
+    background-color: #ffc408;
+}
+.jp-warning:hover {
+    background-color: #efbb24;
+}
+.jp-danger {
+    background-color: #c73e3a;
+}
+.jp-danger:hover {
+    background-color: #ab3b3a;
+}
+.jp-default {
+    background-color: #bdc0ba;
+    color: black;
+}
+.jp-default:hover {
+    background-color: #91989f;
+    color: black;
+}
+
+/* Button 漸層色 */
+.gradient-success {
+    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+    color: #333;
+}
+.gradient-success:hover {
+    background-color: #4a593d;
+}
+.gradient-info {
+    background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+}
+.gradient-info:hover {
+    background-color: #0089a7;
+}
+.gradient-warning {
+    background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+}
+.gradient-warning:hover {
+    background-color: #efbb24;
+}
+.gradient-danger {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+.gradient-danger:hover {
+    background-color: #ab3b3a;
+}
+.gradient-default {
+    background-image: linear-gradient(
+        -225deg,
+        #231557 0%,
+        #44107a 29%,
+        #ff1361 67%,
+        #fff800 100%
+    );
+}
+.gradient-default:hover {
+    background-color: #91989f;
+    color: black;
+}
+
+/* 透明背景 */
+.btns-outline {
+    width: 100%;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 14px 0;
+    padding: 14px 28px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.outline-success {
+    border-color: #04aa6d;
+    color: green;
+}
+
+.outline-success:hover {
+    background-color: #04aa6d;
+    color: white;
+}
+
+/* Blue */
+.outline-info {
+    border-color: #2196f3;
+    color: dodgerblue;
+}
+
+.outline-info:hover {
+    background: #2196f3;
+    color: white;
+}
+
+/* Orange */
+.outline-warning {
+    border-color: #ff9800;
+    color: orange;
+}
+
+.outline-warning:hover {
+    background: #ff9800;
+    color: white;
+}
+
+/* Red */
+.outline-danger {
+    border-color: #f44336;
+    color: red;
+}
+
+.outline-danger:hover {
+    background: #f44336;
+    color: white;
+}
+
+/* Gray */
+.outline-default {
+    border-color: #333;
+    color: black;
+}
+
+.outline-default:hover {
+    border-color: #e7e7e7;
+    color: white;
+    background: #333;
+}
+
+.fa {
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+}
+
+.fa-social {
+    padding: 18px 10px;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55acee;
+    color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+
+.fa-snapchat-ghost {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+    background: #00aff0;
+    color: white;
+}
+
+.fa-android {
+    background: #a4c639;
+    color: white;
+}
+
+.fa-dribbble {
+    background: #ea4c89;
+    color: white;
+}
+
+.fa-vimeo {
+    background: #45bbff;
+    color: white;
+}
+
+.fa-tumblr {
+    background: #2c4762;
+    color: white;
+}
+
+.fa-vine {
+    background: #00b489;
+    color: white;
+}
+
+.fa-foursquare {
+    background: #45bbff;
+    color: white;
+}
+
+.fa-stumbleupon {
+    background: #eb4924;
+    color: white;
+}
+
+.fa-flickr {
+    background: #f40083;
+    color: white;
+}
+
+.fa-yahoo {
+    background: #430297;
+    color: white;
+}
+
+.fa-soundcloud {
+    background: #ff5500;
+    color: white;
+}
+
+.fa-reddit {
+    background: #ff5700;
+    color: white;
+}
+
+.fa-rss {
+    background: #ff6600;
+    color: white;
+}
+
+/* switch button*/
+input[type='checkbox'] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 100px;
+    height: 50px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 45px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background: #bada55;
+}
+
+input:checked + label:after {
+    left: calc(100% - 2.5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 65px;
+}
+
+/* centering */
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+.test {
+    border: 3px solid red;
+}
