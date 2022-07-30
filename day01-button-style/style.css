@@ -518,6 +518,9 @@ label:active:after {
     margin: auto;
     text-align: center;
     font-size: 0;
+    visibility: hidden;
+
+    /* visibility: visible; */
 }
 
 .cover-wrap:before {
@@ -546,7 +549,7 @@ label:active:after {
     width: 80vw;
     padding: 20px 20px;
     background-color: #ccc;
-    background-image: linear-gradient( to top, #dfe9f3 0%, white 100%);
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
     text-align: center;
     position: relative;
     z-index: 1;
@@ -585,7 +588,7 @@ label:active:after {
     width: 80%;
     font-size: 1rem;
     border-radius: 5px;
-    margin: 0px 10px 30px 10px;
+    margin: 0px 10px 20px 10px;
 }
 
 @media (min-width: 800px) {
@@ -603,4 +606,8 @@ label:active:after {
     .cover-content {
         padding: 100px 20px;
     }
+}
+
+button:active {
+    visibility: visible;
 }
