@@ -12,13 +12,11 @@
             integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
             crossorigin="anonymous"
         />
-
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-
-        <script src="main.js"></script>
+        <!-- <script src="main.js" type="module"></script> -->
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark primary">
@@ -80,34 +78,15 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">首頁</a></li>
                         <li class="breadcrumb-item">
-                            <a href="#">前端元件</a>
+                            <a href="#">tools</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Button Components</li>
                     </ol>
                 </nav>
             </div>
-
             <div class="main p-1 p-md-5">
-                <!-- <div class="container overflow-hidden">
-                <div class="row gx-5">
-                    <div class="col item">
-                        <h2>基本色</h2>
-                        <button class="btns success">Seuccess</button>
-                        <button class="btns info">Info</button>
-                        <button class="btns warning">Warning</button>
-                        <button class="btns danger">Danger</button>
-                        <button class="btns default">Default</button>
-                    </div>
-                    <div class="col">
-                        <div class="p-3 border bg-light">
-                            Custom column padding
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
                 <div class="container px-4 w-100">
-                    <h2>Button Components</h2>
+                    <h2>Buttons</h2>
                     我們提供了常見的按鈕元件，只要點擊按鈕，就會顯示該元件的程式碼，可以快速複製、貼上到任何你想要的地方。
                     <br /><br />
                     <div class="quote">重複造輪子?! 我們想要的是創造，而不只是製造。 by 東尼先生</div>
@@ -115,8 +94,9 @@
                     <div class="row gx-3 gx-md-5 item">
                         <div class="col-md">
                             <div class="h2 d-flex align-items-center justify-content-star">
-                                <i class="fa fa-files-o" aria-hidden="true"></i>
-                                <h2>&nbsp Icon 按鈕</h2>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span>
+                                <h2>Icon 按鈕</h2>
                             </div>
                             <p>Icon buttons:</p>
                             <div class="icon-wrap d-flex align-items-center justify-content-star flex-wrap gap-3">
@@ -151,7 +131,7 @@
                             <br />
                             <p>dowload button:</p>
                             <div class="icon-wrap d-flex align-items-center justify-content-star flex-wrap gap-3">
-                                <button class="btns-download"><i class="fa fa-download"></i> Download</button>
+                                <button class="btn-style btns-download"><i class="fa fa-download"></i> Download</button>
                             </div>
                         </div>
                     </div>
@@ -160,35 +140,34 @@
                     <div class="row gx-3 gx-md-5 item">
                         <div class="col-md">
                             <div class="h2 d-flex align-items-center justify-content-star">
-                                <i class="fa fa-files-o" aria-hidden="true"></i>
-                                <h2>&nbsp 基本色</h2>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span>
+                                <h2>基本色</h2>
                             </div>
-                            <button class="btn-style btns success" id="bbb">Success</button>
+                            <button class="btn-style btns success">Success</button>
                             <button class="btn-style btns info">Info</button>
                             <button class="btn-style btns warning">Warning</button>
                             <button class="btn-style btns danger">Danger</button>
                             <button class="btn-style btns default">Default</button>
                         </div>
-
                         <div class="col-md">
                             <div class="h2 d-flex align-items-center justify-content-star">
-                                <i class="fa fa-files-o" aria-hidden="true"></i>
-                                <h2>&nbsp 日系色</h2>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span>
+                                <h2>日系色</h2>
                             </div>
-
                             <button class="btn-style btns jp-success">Success</button>
                             <button class="btn-style btns jp-info">Info</button>
                             <button class="btn-style btns jp-warning">Warning</button>
                             <button class="btn-style btns jp-danger">Danger</button>
                             <button class="btn-style btns jp-default">Default</button>
                         </div>
-
                         <div class="col-md">
                             <div class="h2 d-flex align-items-center justify-content-star">
-                                <i class="fa fa-files-o" aria-hidden="true"></i>
-                                <h2>&nbsp 漸層色</h2>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span>
+                                <h2>漸層色</h2>
                             </div>
-
                             <button class="btn-style btns gradient-success">Success</button>
                             <button class="btn-style btns gradient-info">Info</button>
                             <button class="btn-style btns gradient-warning">Warning</button>
@@ -201,8 +180,9 @@
                     <div class="row gx-3 gx-md-5 item">
                         <div class="col-md">
                             <div class="h2 d-flex align-items-center justify-content-star">
-                                <i class="fa fa-files-o" aria-hidden="true"></i>
-                                <h2>&nbsp 社交按鈕</h2>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span>
+                                <h2>社交按鈕</h2>
                             </div>
                             <button class="btn-style fa fa-social fa-facebook"></button>
                             <button class="btn-style fa fa-social fa-twitter"></button>
@@ -248,13 +228,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container px-4">
                     <div class="row gx-3 gx-md-5 item">
                         <div class="col-md">
                             <div class="h2 d-flex align-items-center justify-content-star">
-                                <i class="fa fa-files-o" aria-hidden="true"></i>
-                                <h2>&nbsp 點擊效果</h2>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span>
+                                <h2>點擊效果</h2>
                             </div>
                             <p>動態點擊按鈕</p>
                             <button class="btn-style btns-pressed">Click Me</button>
@@ -263,13 +243,13 @@
                             <input type="checkbox" id="switch" />
                             <label class="btn-styles" for="switch">Toggle</label>
                         </div>
-
                         <div class="col-md">
                             <div class="h2 d-flex align-items-center justify-content-star">
-                                <i class="fa fa-files-o" aria-hidden="true"></i>
-                                <h2>&nbsp 下拉選單按鈕</h2>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <i class="fa fa-cog fa-spin fa-lg fa-fw"></i
+                                ><span class="sr-only icons">Loading...</span>
+                                <h2>下拉選單按鈕</h2>
                             </div>
-
                             <button class="btn-style btns-outline outline-success">Success</button>
                             <button class="btn-style btns-outline outline-info">Info</button>
                             <button class="btn-style btns-outline outline-warning">Warning</button>
@@ -278,143 +258,14 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container px-4">
                     <div class="row gx-3 gx-md-5 item">
                         <div class="col-md">
-
-                            <div class="appner">appbanner</div>
-
+                            <div class="appner">coming soon</div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- 
-            <div class="container px-4">
-                <div class="row gx-5">
-                    <div class="col-md item">
-                        <h2>基本色</h2>
-                        <button class="btns success">Success</button>
-                        <button class="btns info">Info</button>
-                        <button class="btns warning">Warning</button>
-                        <button class="btns danger">Danger</button>
-                        <button class="btns default">Default</button>
-                    </div>
-
-                    <div class="col-md item">
-                        <h2>日系色</h2>
-                        <button class="btns jp-success">Success</button>
-                        <button class="btns jp-info">Info</button>
-                        <button class="btns jp-warning">Warning</button>
-                        <button class="btns jp-danger">Danger</button>
-                        <button class="btns jp-default">Default</button>
-                    </div>
-                    <div class="col-md item">
-                        <h2>漸層色</h2>
-                        <button class="btns gradient-success">Success</button>
-                        <button class="btns gradient-info">Info</button>
-                        <button class="btns gradient-warning">Warning</button>
-                        <button class="btns gradient-danger">Danger</button>
-                        <button class="btns gradient-default">Default</button>
-                    </div>
-                </div> -->
-            <!-- </div>
-
-
-        <div class="main pt-5">
-            <div class="container">
-                <div class="container px-4">
-                    <div class="row gx-5">
-                        <div class="col">
-                            <div class="col-md item test">
-                                <h2>基本色</h2>
-                                <button class="btns success">Success</button>
-                                <button class="btns info">Info</button>
-                                <button class="btns warning">Warning</button>
-                                <button class="btns danger">Danger</button>
-                                <button class="btns default">Default</button>
-                            </div>
-                        </div>
-                        <div class="col-md item">
-                            <h2>日系色</h2>
-                            <button class="btns jp-success">Success</button>
-                            <button class="btns jp-info">Info</button>
-                            <button class="btns jp-warning">Warning</button>
-                            <button class="btns jp-danger">Danger</button>
-                            <button class="btns jp-default">Default</button>
-                        </div>
-                        <div class="col-md item">
-                            <h2>漸層色</h2>
-                            <button class="btns gradient-success">
-                                Success
-                            </button>
-                            <button class="btns gradient-info">Info</button>
-                            <button class="btns gradient-warning">
-                                Warning
-                            </button>
-                            <button class="btns gradient-danger">Danger</button>
-                            <button class="btns gradient-default">
-                                Default
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
-
-            <!-- <div class="row row-cols-md-2 row-cols-lg-3 gx-5">
-                    <div class="col-md item">
-                        <h2>基本色</h2>
-                        <button class="btns success">Success</button>
-                        <button class="btns info">Info</button>
-                        <button class="btns warning">Warning</button>
-                        <button class="btns danger">Danger</button>
-                        <button class="btns default">Default</button>
-                    </div>
-                    <div class="col-md item">
-                        <h2>日系色</h2>
-                        <button class="btns jp-success">Success</button>
-                        <button class="btns jp-info">Info</button>
-                        <button class="btns jp-warning">Warning</button>
-                        <button class="btns jp-danger">Danger</button>
-                        <button class="btns jp-default">Default</button>
-                    </div>
-                    <div class="col-md item">
-                        <h2>漸層色</h2>
-                        <button class="btns gradient-success">Success</button>
-                        <button class="btns gradient-info">Info</button>
-                        <button class="btns gradient-warning">Warning</button>
-                        <button class="btns gradient-danger">Danger</button>
-                        <button class="btns gradient-default">Default</button>
-                    </div>
-                    <div class="col-md item">
-                        <h2>基本色</h2>
-                        <button class="btns success">Success</button>
-                        <button class="btns info">Info</button>
-                        <button class="btns warning">Warning</button>
-                        <button class="btns danger">Danger</button>
-                        <button class="btns default">Default</button>
-                    </div>
-                    <div class="col-md item">
-                        <h2>日系色</h2>
-                        <button class="btns jp-success">Success</button>
-                        <button class="btns jp-info">Info</button>
-                        <button class="btns jp-warning">Warning</button>
-                        <button class="btns jp-danger">Danger</button>
-                        <button class="btns jp-default">Default</button>
-                    </div>
-                    <div class="col-md item">
-                        <h2>漸層色</h2>
-                        <button class="btns gradient-success">Success</button>
-                        <button class="btns gradient-info">Info</button>
-                        <button class="btns gradient-warning">Warning</button>
-                        <button class="btns gradient-danger">Danger</button>
-                        <button class="btns gradient-default">Default</button>
-                    </div>
-                </div> -->
-            <!-- </div>
-        </div> -->
-
-      
             <section class="  ">
                 <!-- Footer -->
                 <footer class="text-center text-white" style="background-color: #0a4275">
@@ -436,7 +287,6 @@
                         <!-- Section: CTA -->
                     </div>
                     <!-- Grid container -->
-
                     <!-- Copyright -->
                     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
                         © 2022
@@ -448,24 +298,23 @@
                 <!-- Footer -->
             </section>
         </div>
-
         <div class="cover-wrap">
             <div class="cover-content">
                 <div class="textarea-wrap">
                     <div class="textarea-item">
-                        <textarea class="textarea" name="" id="" cols="30" rows="10">html</textarea>
+                        <textarea class="textarea" name="" id="htmltxt" cols="30" rows="10">html</textarea>
                         <button class="btns-icon btns-icon-customer">
                             <i class="fa fa-center fa-copy"></i> Copy HTML
                         </button>
                     </div>
                     <div class="textarea-item">
-                        <textarea class="textarea" name="" id="" cols="30" rows="10">css</textarea>
+                        <textarea class="textarea" name="" id="csstxt" cols="30" rows="10">css</textarea>
                         <button class="btns-icon btns-icon-customer">
                             <i class="fa fa-center fa-copy"></i>Copy CSS
                         </button>
                     </div>
                     <div class="textarea-item">
-                        <textarea class="textarea" name="" id="" cols="30" rows="10"> </textarea>
+                        <textarea class="textarea" name="" id="jstxt" cols="30" rows="10"> </textarea>
                         <button class="btns-icon btns-icon-customer">
                             <i class="fa fa-center fa-copy"></i>Copy JavaScript
                         </button>
@@ -473,10 +322,8 @@
                 </div>
                 <button class="btns-icon btns-icon-customer btn-done"><i class="fa fa-center fa-"></i>Done</button>
             </div>
-
-            
-
         </div>
+        <script src="main.js" type="module"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

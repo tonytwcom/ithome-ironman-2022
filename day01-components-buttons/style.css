@@ -10,8 +10,8 @@ img {
 
 .btn-style {
     border: none;
-    }
-    
+}
+
 #container-all {
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ img {
 
 .banner {
     height: 420px;
-    background-image: url('./banner.jpg');
+    background-image: url('./img/banner.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -44,8 +44,10 @@ footer {
 }
 
 h2 {
-    margin: 2rem 0;
+    margin: 2rem 0 2rem -5px;
     padding: 1rem 0;
+    position: relative;
+    top: 4px;
 }
 
 .container-fluid {
@@ -603,7 +605,16 @@ label:active:after {
     }
 }
 
+.icons {
+    vertical-align: top;
+    border: 1px solid #000;
+    background: red;
+}
+
 button:active {
     visibility: visible;
 }
 
+.test {
+    border: 1px solid reds;
+}
