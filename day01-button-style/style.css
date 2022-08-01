@@ -8,6 +8,10 @@ img {
     max-width: 100%;
 }
 
+.btn-style {
+    border: none;
+    }
+    
 #container-all {
     display: flex;
     flex-direction: column;
@@ -501,14 +505,6 @@ label:active:after {
     width: 65px;
 }
 
-/* centering */
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-} */
-
 .cover-wrap {
     width: 100%;
     height: 100%;
@@ -519,7 +515,6 @@ label:active:after {
     text-align: center;
     font-size: 0;
     visibility: hidden;
-
     /* visibility: visible; */
 }
 
@@ -611,3 +606,4 @@ label:active:after {
 button:active {
     visibility: visible;
 }
+
