@@ -1,16 +1,17 @@
-// export let snippetsButton = `
-// <div class="icon-wrap d-flex align-items-center justify-content-star flex-wrap gap-3">
-//     <button class="btn-style btns-icon"><i class="fa fa-center fa-home"></i> Home</button>
-//     <button class="btn-style btns-icon"><i class="fa fa-center fa-bars"></i> Menu</button>
-//     <button class="btn-style btns-icon"><i class="fa fa-center fa-trash"></i> Trash</button>
-//     <button class="btn-style btns-icon"><i class="fa fa-center fa-close"></i> Close</button>
-//     <button class="btn-style btns-icon">
-//         <i class="fa fa-center fa-folder"></i>Folder
-//     </button>
-// </div>
-// `;
+let count = document.getElementsByClassName('btn-style').length;
+export let getHtml = [];
+let stateName = ['home', 'bars', 'trash', 'close', 'folder'];
 
-export let snippetsButton = 'Hreere';
-export let myString = function () {
-    alert('rffdfsdfdsfds');
-};
+for (let i = 0; i < count; i++) {
+    if (i < 5) {
+        getHtml[i] = `
+        <button class="btn-style btns-icon">
+        <i class="fa fa-center fa-${stateName[i]}"></i>`;
+    } else if (i > 15) {
+        getHtml[i] = `
+        <button class="btn-style btns-icon">
+        <i class="fa fa-center fa-${count}"></i>`;
+    }
+}
+
+/* <i class="fa fa-center fa-${stateName[1]}"></i> */

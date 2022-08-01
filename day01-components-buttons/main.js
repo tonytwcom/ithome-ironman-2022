@@ -1,4 +1,4 @@
-import {myString} from './js/snippets.js';
+import {getHtml} from './js/snippets.js';
 
 window.onload = function () {
     // console.log(count);
@@ -22,55 +22,39 @@ window.onload = function () {
     //     },
     //     false
     // );
-    
+
     let buttons = document.querySelectorAll('.btn-style');
     let done = document.querySelector('.btn-done');
     let count = document.getElementsByClassName('btn-style').length;
 
     done.addEventListener('click', closeButton, false);
-
+    // 監聽全部 button
     for (let i = 0; i < count; i++) {
-        console.log(i + ' is');
-        console.log(buttons[i]);
-        buttons[i].addEventListener('click', openButton, false);
+        // console.log(buttons[i]);
+
+        buttons[i].addEventListener(
+            'click',
+            function () {
+                openButton(i);
+            },
+            false
+        );
+        // document.getElementById('htmltxt').innerHTML = buttons[i];
+        // buttons[i]getHtml[i]
     }
 
-    let xs = ` <div class="cover-wrap">
-        <div class="cover-content">
-        <div class="textarea-wrap">
-            <div class="textarea-item">
-                <textarea class="textarea" name="" id="htmltxt" cols="30" rows="10">html</textarea>
-                <button class="btns-icon btns-icon-customer">
-                    <i class="fa fa-center fa-copy"></i> Copy HTML
-                </button>
-            </div>
-            <div class="textarea-item">
-                <textarea class="textarea" name="" id="csstxt" cols="30" rows="10">css</textarea>
-                <button class="btns-icon btns-icon-customer">
-                    <i class="fa fa-center fa-copy"></i>Copy CSS
-                </button>
-            </div>
-            <div class="textarea-item">
-                <textarea class="textarea" name="" id="jstxt" cols="30" rows="10"> </textarea>
-                <button class="btns-icon btns-icon-customer">
-                    <i class="fa fa-center fa-copy"></i>Copy JavaScript
-                </button>
-            </div>
-        </div>
-        <button class="btns-icon btns-icon-customer btn-done"><i class="fa fa-center fa-"></i>Done</button>
-    </div>`;
-
-    document.getElementById('htmltxt').value = xs;
+    // document.getElementById('htmltxt').value = getHtml[i];
     // console.log(myString);
-    myString();
 };
 
-function openButton() {
-    let opened = document.getElementsByClassName('cover-wrap')[0].style;
+function openButton(i) {
+    let opened = document.getElementsByClassName('cover')[0].style;
     opened.visibility = 'visible';
-    // document.getElementsByClassName('cover-wrap')[0].style.visibility = 'visible';
+    document.getElementById('htmltxt').value = getHtml[i];
+    document.getElementById('csstxt').value = getHtml[i];
+    document.getElementById('jstxt').value = getHtml[i];
 }
 
 function closeButton() {
-    document.getElementsByClassName('cover-wrap')[0].style.visibility = 'hidden';
+    document.getElementsByClassName('cover')[0].style.visibility = 'hidden';
 }

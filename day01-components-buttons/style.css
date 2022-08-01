@@ -507,7 +507,7 @@ label:active:after {
     width: 65px;
 }
 
-.cover-wrap {
+.cover {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -520,7 +520,7 @@ label:active:after {
     /* visibility: visible; */
 }
 
-.cover-wrap:before {
+.cover:before {
     /* border: 5px solid #000; */
     content: '';
     display: inline-block;
@@ -529,7 +529,7 @@ label:active:after {
     vertical-align: middle;
 }
 
-.cover-wrap:after {
+.cover:after {
     /* border: 5px solid red; */
     content: '';
     position: absolute;
@@ -556,7 +556,7 @@ label:active:after {
     border-radius: 15px;
     height: 90vh;
 }
-.textarea-wrap {
+.cover-textareaWrap {
     /* border: 3px solid green; */
     /* overflow: scroll; */
     /* overflow-y: auto; */
@@ -564,7 +564,7 @@ label:active:after {
     /* display: flex; */
 }
 
-.textarea {
+.cover-textarea {
     width: 100%;
     height: 150px;
     border: 3px gray double;
@@ -589,14 +589,14 @@ label:active:after {
 }
 
 @media (min-width: 800px) {
-    .textarea-wrap {
+    .cover-textareaWrap {
         display: flex;
         flex-direction: row;
         /* flex-direction: column; */
         /* border: 1px solid red; */
     }
 
-    .textarea {
+    .cover-textarea {
         height: 35vh;
     }
 
