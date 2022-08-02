@@ -8,7 +8,7 @@ img {
     max-width: 100%;
 }
 
-.btn-style {
+.js-btns {
     border: none;
 }
 
@@ -580,13 +580,12 @@ label:active:after {
     border-radius: 5px;
     margin: 0px 10px 20px 10px;
 }
-
+/*
 @media (min-width: 800px) {
     .cover-textareaWrap {
         display: flex;
         flex-direction: row;
-        /* flex-direction: column; */
-        /* border: 1px solid red; */
+      
     }
 
     .cover-textarea {
@@ -597,7 +596,7 @@ label:active:after {
         padding: 100px 20px;
     }
 }
-
+*/
 .icons {
     vertical-align: top;
     border: 1px solid #000;
@@ -606,8 +605,4 @@ label:active:after {
 
 button:active {
     visibility: visible;
-}
-
-.test {
-    border: 1px solid reds;
 }

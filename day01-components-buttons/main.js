@@ -7,33 +7,23 @@ window.onload = function () {
     showHeader();
     showFooter();
     showCover();
-    // console.log(count);
-    // var el = document.getElementById('bbb');
-    // var el2 = document.getElementById('ddd');
-    // // var el = document.querySelector('.btns');
-    // el.addEventListener(
-    //     'click',
-    //     function () {
-    //         console.log('good');
-    //         // document.getElementById('ccc').style.transition-duration = '5s';
-    //         document.getElementById('ccc').style.visibility = 'visible';
-    //     },
-    //     false
-    // );
 
-    // el2.addEventListener(
-    //     'click',
-    //     () => {
-    //         document.getElementById('ccc').style.visibility = 'hidden';
-    //     },
-    //     false
-    // );
+    let buttons = document.querySelectorAll('.js-btns');
+    let done = document.querySelector('.js-doneBtn');
+    let count = document.getElementsByClassName('js-btns').length;
+    let copyBtn = document.querySelectorAll('.js-copyBtn');
 
-    let buttons = document.querySelectorAll('.btn-style');
-    let done = document.querySelector('.btn-done');
-    let count = document.getElementsByClassName('btn-style').length;
-
+    for (let i = 0; i < 3; i++) {
+        copyBtn[i].addEventListener(
+            'click',
+            function () {
+                getCode(i);
+            },
+            false
+        );
+    }
     done.addEventListener('click', closeButton, false);
+
     // 監聽全部 button
     for (let i = 0; i < count; i++) {
         // console.log(buttons[i]);
@@ -48,7 +38,14 @@ window.onload = function () {
         // document.getElementById('htmltxt').innerHTML = buttons[i];
         // buttons[i]getHtml[i]
     }
-
+    function getCode(i) {
+        let getTxt = ['htmltxt', 'csstxt', 'jstxt'];
+        let copyText = document.getElementById(getTxt[i]);
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+        
+    }
     // document.getElementById('htmltxt').value = getHtml[i];
     // console.log(myString);
 };
