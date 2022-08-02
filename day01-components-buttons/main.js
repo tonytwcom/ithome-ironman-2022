@@ -1,6 +1,12 @@
-import {getHtml} from './js/snippets.js';
+import {getHtml} from '../common/js/snippets.js';
+import {showHeader} from '../common/js/header.js';
+import {showFooter} from '../common/js/footer.js';
+import {showCover} from '../common/js/cover.js';
 
 window.onload = function () {
+    showHeader();
+    showFooter();
+    showCover();
     // console.log(count);
     // var el = document.getElementById('bbb');
     // var el2 = document.getElementById('ddd');
@@ -31,7 +37,7 @@ window.onload = function () {
     // 監聽全部 button
     for (let i = 0; i < count; i++) {
         // console.log(buttons[i]);
-
+        // console.log('');
         buttons[i].addEventListener(
             'click',
             function () {

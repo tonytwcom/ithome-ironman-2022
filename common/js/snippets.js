@@ -1,3 +1,4 @@
+// Buttons
 let count = document.getElementsByClassName('btn-style').length;
 export let getHtml = [];
 let stateName = ['home', 'bars', 'trash', 'close', 'folder'];
@@ -14,4 +15,3 @@ for (let i = 0; i < count; i++) {
     }
 }
 
-/* <i class="fa fa-center fa-${stateName[1]}"></i> */

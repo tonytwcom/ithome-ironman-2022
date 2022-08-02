@@ -1,0 +1,17 @@
+.banner {
+    height: 420px;
+    background-image: url('../img/banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    flex: 0 0 auto;
+}
+
+.main {
+    flex: 1 0 auto;
+    /* background-image: linear-gradient(to top, #dfe9f3 0%, white 100%); */
+}
+
+footer {
+    flex: 0 0 auto;
+}
