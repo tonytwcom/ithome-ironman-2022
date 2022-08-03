@@ -79,10 +79,17 @@ let varOfHTML = [
 ];
 
 for (let i = 0; i < count; i++) {
+    if (getJs[i] === undefined) {
+        getJs[i] = 'No JavaScript';
+    }
+
     if (i < 5) {
         getHtml[
             i
         ] = `<button class="js-btns btns-icon">\n\t<i class="fa fa-center fa-${varOfHTML[i]}"> ${varOfHTML[i]}</i>\n</button>`;
+        getCss[
+            i
+        ] = `.btns-icon {\n\tnpadding: 12px 16px;\n\tnborder: none;\n\tnbackground-color: DodgerBlue;\n\tncolor: white;\n\tnfont-size: 25px;\n\tncursor: pointer;\n}\n.btns-icon:hover {\n\tbackground-color: RoyalBlue;\n}`;
     } else if (i < 10) {
         getHtml[
             i

@@ -1,4 +1,4 @@
-import {getHtml} from '../common/js/snippets.js';
+import {getHtml, getCss, getJs} from '../common/js/snippets.js';
 import {showHeader} from '../common/js/header.js';
 import {showFooter} from '../common/js/footer.js';
 import {showCover} from '../common/js/cover.js';
@@ -7,6 +7,7 @@ window.onload = function () {
     showHeader();
     showFooter();
     showCover();
+    // console.log(getCss[3]);
 
     let buttons = document.querySelectorAll('.js-btns');
     let done = document.querySelector('.js-doneBtn');
@@ -44,18 +45,19 @@ window.onload = function () {
         copyText.select();
         copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
-        
     }
     // document.getElementById('htmltxt').value = getHtml[i];
     // console.log(myString);
 };
 
 function openButton(i) {
+    const intst = i;
+    console.log(intst);
     let opened = document.getElementsByClassName('cover')[0].style;
     opened.visibility = 'visible';
     document.getElementById('htmltxt').value = getHtml[i];
-    document.getElementById('csstxt').value = getHtml[i];
-    document.getElementById('jstxt').value = getHtml[i];
+    document.getElementById('csstxt').value = getCss[i];
+    document.getElementById('jstxt').value = getJs[i];
 }
 
 function closeButton() {

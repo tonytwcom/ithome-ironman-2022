@@ -102,10 +102,10 @@ h2 {
 }
 
 .btns-icon {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
     padding: 12px 16px;
+    border: none;
+    background-color: DodgerBlue;
+    color: white;
     font-size: 25px;
     cursor: pointer;
 }

@@ -76,10 +76,9 @@ footer {
     /* overflow-y: auto; */
 
     /* display: flex; */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
+    /* display: flex; */
+    /* justify-content: center;
+    flex-wrap: wrap; */
 }
 
 .cover-textarea {
@@ -95,15 +94,18 @@ footer {
     color: white;
     font-size: 1.5rem;
     box-sizing: border-box;
+}
 
-    
+.section::-webkit-scrollbar {
+    width: 10px;
+    background: #000;
 }
 
 @media (min-width: 1200px) {
     .cover-textareaWrap {
         display: flex;
         flex-wrap: nowrap;
-        
+
         justify-content: space-between;
         /* flex-direction: row; */
         /* flex-direction: column; */
