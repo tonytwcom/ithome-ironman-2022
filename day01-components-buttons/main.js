@@ -1,7 +1,7 @@
 // import {showHeader} from '../common/js/header.js';
 // import {showFooter} from '../common/js/footer.js';
 // import {showCover} from '../common/js/cover.js';
-import {initMain} from '../common/js/main.js';
+import {initMain} from '../common/js/initmain.js';
 import {getHtml, getCss, getJs} from '../common/js/snippets.js';
 
 window.onload = function () {
