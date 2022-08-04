@@ -1,7 +1,7 @@
 export function showHeader() {
     let commonHeader = ` <nav class="navbar navbar-expand-lg navbar-dark primary">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">IT 鐵人賽 2022 - Button Components</a>
+    <a class="navbar-brand" href="#">IT 鐵人賽 2022 - Components Tools </a>
     <button
         class="navbar-toggler"
         type="button"
@@ -22,7 +22,7 @@ export function showHeader() {
                 <a class="nav-link" href="#">Features</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item dropdown">
                 <a
@@ -33,14 +33,14 @@ export function showHeader() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    Dropdown link
+                    How To 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li>
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="../../day01-components-buttons/index.html">Button</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="../../day02-components-navbar/index.html">Navbar</a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="#">Something else here</a>
