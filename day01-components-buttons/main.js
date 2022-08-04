@@ -1,13 +1,14 @@
+// import {showHeader} from '../common/js/header.js';
+// import {showFooter} from '../common/js/footer.js';
+// import {showCover} from '../common/js/cover.js';
+import {initMain} from '../common/js/main.js';
 import {getHtml, getCss, getJs} from '../common/js/snippets.js';
-import {showHeader} from '../common/js/header.js';
-import {showFooter} from '../common/js/footer.js';
-import {showCover} from '../common/js/cover.js';
 
 window.onload = function () {
-    showHeader();
-    showFooter();
-    showCover();
-    // console.log(getCss[3]);
+    // showHeader();
+    // showFooter();
+    // showCover();
+    initMain();
 
     let buttons = document.querySelectorAll('.js-btns');
     let done = document.querySelector('.js-doneBtn');

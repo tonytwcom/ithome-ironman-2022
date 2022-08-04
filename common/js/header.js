@@ -1,5 +1,5 @@
 export function showHeader() {
-    let commonoHeader = ` <nav class="navbar navbar-expand-lg navbar-dark primary">
+    let commonHeader = ` <nav class="navbar navbar-expand-lg navbar-dark primary">
     <div class="container-fluid">
     <a class="navbar-brand" href="#">IT 鐵人賽 2022 - Button Components</a>
     <button
@@ -51,5 +51,5 @@ export function showHeader() {
     </div>
 </div>
 </nav>`;
-    document.getElementById('common-header').innerHTML = commonoHeader;
+    document.getElementById('showHeader').innerHTML = commonHeader;
 }
