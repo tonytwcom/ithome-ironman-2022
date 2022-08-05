@@ -37,10 +37,10 @@ export function showHeader() {
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li>
-                        <a class="dropdown-item" href="../../day01-components-buttons/index.html">Button</a>
+                        <a class="dropdown-item" href="../../components-buttons/index.html">Button</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="../../day02-components-navbar/index.html">Navbar</a>
+                        <a class="dropdown-item" href="../../components-navbar/index.html">Navbar</a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="#">Something else here</a>

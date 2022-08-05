@@ -1,0 +1,31 @@
+.topnav {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    background: #333;
+    background-image: linear-gradient(to left, #00569e 0%, #003868 100%);
+    overflow: hidden;
+    box-shadow: 0px 3px 5px black;
+}
+
+.topnav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.topnav a:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
+    box-shadow: 0px 3px 5px black;
+}
+
+.topnav .active {
+    background: skyblue;
+    color: black;
+}
