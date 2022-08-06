@@ -1,3 +1,16 @@
+.agroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.agroup > a {
+    font-size: 1rem;
+    width: 30%;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 .banner {
     height: 420px;
     background-image: url('../img/banner.jpg');

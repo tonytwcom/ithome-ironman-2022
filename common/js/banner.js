@@ -6,7 +6,7 @@ export function showBanner() {
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">首頁</a></li>
             <li class="breadcrumb-item">
-                <a href="#">tools</a>
+                <a href="../../index.html">tools</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">Button Components</li>
         </ol>
