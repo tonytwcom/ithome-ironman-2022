@@ -7,6 +7,7 @@
         <title>components-card</title>
         <!-- <link rel="stylesheet" href="../reset.css" /> -->
         <link rel="stylesheet" href="style.css" />
+        <script src="https://kit.fontawesome.com/c382d0f4cc.js" crossorigin="anonymous"></script>
         <style>
             * {
                 margin: 0;
@@ -19,43 +20,136 @@
                 justify-content: center;
                 align-items: center;
             }
+            .container {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                flex-wrap: wrap;
+            }
 
             .card {
                 border: 3px solid #ffa;
+                max-width: 170px;
+                overflow: hidden;
+                font-size: 14px;
             }
             .card__img {
                 /* width: 183px;
                 height: 103px; */
                 width: 170px;
-                height: 95px; 
+                height: 95px;
+                border: 1px solid #000;
+                background-image: url('./video-img.jpg');
+                background-size: cover;
+            }
+            .time__block {
+            }
+            .time__icon {
+            }
+
+            .content {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                padding: 4px 8px;
+                vertical-align: middle;
                 border: 1px solid #000;
             }
-            .time__block{
-                
-            
-            }
-            .time__icon{}
 
+            .content__icon {
+                margin: 0 3px;
+                box-sizing: border-box;
+            }
         </style>
     </head>
     <body>
-        <div class="card">
-            <div class="card__img"></div>
-            <div class="time__block">
-                <div class="time__icon"></div>
-                <div class="time__text"></div>
+        <div class="container">
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="time__block">
+                    <div class="time__icon"></div>
+                    <div class="time__text"></div>
+                </div>
+                <div class="card__heart"></div>
+                <div class="video__block">
+                    <div class="video__icon"></div>
+                    <div class="video__text">第6集</div>
+                </div>
+                <div class="content">
+                    <div class="content__title">OVERLORD</div>
+                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
+                    <div class="content__number">118.6萬</div>
+                </div>
             </div>
-            <div class="card__heart"></div>
-            <div class="video__block">
-                <div class="video__icon"></div>
-                <div class="video__text"></div>
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="time__block">
+                    <div class="time__icon"></div>
+                    <div class="time__text"></div>
+                </div>
+                <div class="card__heart"></div>
+                <div class="video__block">
+                    <div class="video__icon"></div>
+                    <div class="video__text">第6集</div>
+                </div>
+                <div class="content">
+                    <div class="content__title">OVERLORD</div>
+                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
+                    <div class="content__number">118.6萬</div>
+                </div>
             </div>
-            <div class="content">
-                <div class="content__title"></div>
-                <div class="content__icon"></div>
-                <div class="content__number"></div>
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="time__block">
+                    <div class="time__icon"></div>
+                    <div class="time__text"></div>
+                </div>
+                <div class="card__heart"></div>
+                <div class="video__block">
+                    <div class="video__icon"></div>
+                    <div class="video__text">第6集</div>
+                </div>
+                <div class="content">
+                    <div class="content__title">OVERLORD</div>
+                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
+                    <div class="content__number">118.6萬</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="time__block">
+                    <div class="time__icon"></div>
+                    <div class="time__text"></div>
+                </div>
+                <div class="card__heart"></div>
+                <div class="video__block">
+                    <div class="video__icon"></div>
+                    <div class="video__text">第6集</div>
+                </div>
+                <div class="content">
+                    <div class="content__title">OVERLORD</div>
+                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
+                    <div class="content__number">118.6萬</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__img"></div>
+                <div class="time__block">
+                    <div class="time__icon"></div>
+                    <div class="time__text"></div>
+                </div>
+                <div class="card__heart"></div>
+                <div class="video__block">
+                    <div class="video__icon"></div>
+                    <div class="video__text">第6集</div>
+                </div>
+                <div class="content">
+                    <div class="content__title">OVERLORD</div>
+                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
+                    <div class="content__number">118.6萬</div>
+                </div>
             </div>
         </div>
+
         <script src="main.js"></script>
     </body>
 </html>
