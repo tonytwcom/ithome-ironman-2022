@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>components-cssselector</title>
+        <title>components-flexbox</title>
         <!-- <link rel="stylesheet" href="../reset.css" /> -->
         <link rel="stylesheet" href="style.css" />
         <script src="main.js"></script>
@@ -57,16 +57,15 @@
             }
 
             .container {
-                margin: 50px;
+                margin: 10px;
                 display: grid;
-                grid-template-columns: auto auto auto auto;
+                grid-template-columns: auto;
                 gap: 10px;
                 font-weight: 600;
                 cursor: pointer;
             }
 
             .cards {
-                /* width: 300px; */
                 width: 100%;
                 border: solid 1px rgba(0, 0, 0, 0.15);
                 padding: 15px 20px;
@@ -74,6 +73,9 @@
                 border-radius: 10px;
                 background-color: rgba(238, 238, 238, 0.6);
                 box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+                background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+                background-image: linear-gradient(to bottom, #ecd6f0 70%, #fff 100%);
+                overflow-x: scroll;
             }
 
             .color__all {
@@ -104,62 +106,180 @@
             .color__X ~ .color__Y--all {
                 color: rgb(255, 136, 0);
             }
+
+            .outbox {
+                width: auto;
+                border-radius: 3px;
+                border: 1px solid black;
+                background: #995db5;
+                box-shadow: 10px 10px #7b4a91 inset;
+            }
+
+            .innerbox {
+                background: #f7941f;
+                margin: 10px;
+                height: 40px;
+                border: 2px solid black;
+                box-shadow: 1px 1px 0 1 #f7941f;
+                border-radius: 3px;
+                box-shadow: 10px 10px #f9af56 inset, 5px 5px #824f9a;
+                flex-grow: 1;
+                font-size: 24px;
+                color: white;
+                text-align: center;
+                line-height: 40px;
+                flex-shrink: 0;
+                min-width: 40px;
+            }
+
+            .innerbox__2times {
+                flex-grow: 2;
+            }
+
+            .demo-display {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .demo__flexrow {
+                display: flex;
+                flex-direction: row;
+            }
+            .demo__flexrow--reverse {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .demo__flexcolumn {
+                display: flex;
+                flex-direction: column;
+            }
+            .demo__flexcolumn--reverse {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .demo__wrap--nowrap {
+                display: flex;
+            }
+
+            .demo__wrap {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .demo__wrap--reverse {
+                display: flex;
+                flex-wrap: wrap-reverse;
+            }
+
+            p {
+                background: #1b1b1b;
+                border-radius: 5px;
+                color: #72e0d1;
+                padding: 5px;
+            }
+            span {
+                color: #f5d67b;
+            }
         </style>
     </head>
     <body>
-        <div class="header">30種選擇器實作</div>
+        <div class="header">Flexbox</div>
         <div class="container">
             <div class="cards">
-                <div class="item__img">
-                    <img src="https://picsum.photos/300/200?random=1" />
+                <h3>display</h3>
+                <p>display:<span>flex</span>;</p>
+                <div class="demo-display outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox innerbox__2times">2</p>
+                    <p class="innerbox">3</p>
                 </div>
-                <h3 class="color__default">預設</h3>
-                <ul class="color__default">
-                    <li class="color__default">第一層</li>
-                    <ul class="color__default">
-                        <li class="color__default">第二層</li>
-                        <li class="color__default">第二層</li>
-                        <ul class="color__default">
-                            <li class="color__default">第三層</li>
-                        </ul>
-                    </ul>
-                    <li class="color__default">第一層</li>
-                    <li class="color__default">第一層</li>
-                    <ul class="color__default">
-                        <li class="color__default">第二層</li>
-                        <ul class="color__default">
-                            <li class="color__default">第三層</li>
-                        </ul>
-                    </ul>
-                    <li class="color__default">第一層</li>
-                </ul>
             </div>
 
             <div class="cards">
-                <div class="item__img">
-                    <img src="https://picsum.photos/300/200?random=2" />
+                <h3>flex-direction</h3>
+                <p>flex-direction:<span>row</span>;</p>
+                <div class="demo__flexrow outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox">2</p>
+                    <p class="innerbox">3</p>
+                    <p class="innerbox">4</p>
                 </div>
-                <h3 class="color__all">* 選擇器</h3>
-                <ul class="color__all">
-                    <li class="color__all">第一層</li>
-                    <ul class="color__all">
-                        <li class="color__all">第二層</li>
-                        <li class="color__all">第二層</li>
-                        <ul class="color__all">
-                            <li class="color__all">第三層</li>
-                        </ul>
-                    </ul>
-                    <li class="color__all">第一層</li>
-                    <li class="color__all">第一層</li>
-                    <ul class="color__all">
-                        <li class="color__all">第二層</li>
-                        <ul class="color__all">
-                            <li class="color__all">第三層</li>
-                        </ul>
-                    </ul>
-                    <li class="color__all">第一層</li>
-                </ul>
+
+                <p>flex-direction:<span>row-reverse</span>:</p>
+                <div class="demo__flexrow--reverse outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox">2</p>
+                    <p class="innerbox">3</p>
+                    <p class="innerbox">4</p>
+                </div>
             </div>
+
+            <div class="cards">
+                <h3>flex-direction</h3>
+                <p>flex-direction:<span>column</span>;</p>
+                <div class="demo__flexcolumn outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox">2</p>
+                    <p class="innerbox">3</p>
+                    <p class="innerbox">4</p>
+                </div>
+
+                <p>flex-direction:<span>rcolumn-reverse</span>;</p>
+                <div class="demo__flexcolumn--reverse outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox">2</p>
+                    <p class="innerbox">3</p>
+                    <p class="innerbox">4</p>
+                </div>
+            </div>
+
+            <div class="cards">
+                <h3>flex-wrap：nowrap</h3>
+                <p>flex-wrap: <span>nowrap | wrap | wrap-reverse</span>;</p>
+                <div class="demo__wrap--nowrap outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox">2</p>
+                    <p class="innerbox">3</p>
+                    <p class="innerbox innerbox__2times">4</p>
+                    <p class="innerbox innerbox__2times">5</p>
+                    <p class="innerbox">6</p>
+                    <p class="innerbox">7</p>
+                    <p class="innerbox">8</p>
+                </div>
+            </div>
+
+            <div class="cards">
+                <h3>flex-wrap：wrap</h3>
+                <p>flex-wrap: <span> wrap </span>;</p>
+                <div class="demo__wrap outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox">2</p>
+                    <p class="innerbox">3</p>
+                    <p class="innerbox innerbox__2times">4</p>
+                    <p class="innerbox innerbox__2times">5</p>
+                    <p class="innerbox">6</p>
+                    <p class="innerbox">7</p>
+                    <p class="innerbox">8</p>
+                </div>
+            </div>
+
+            <div class="cards">
+                <h3>flex-wrap</h3>
+                <p>flex-wrap: <span> wrap-reverse</span>;</p>
+                <div class="demo__wrap--reverse outbox">
+                    <p class="innerbox">1</p>
+                    <p class="innerbox">2</p>
+                    <p class="innerbox">3</p>
+                    <p class="innerbox innerbox__2times">4</p>
+                    <p class="innerbox innerbox__2times">5</p>
+                    <p class="innerbox">6</p>
+                    <p class="innerbox">7</p>
+                    <p class="innerbox">8</p>
+                </div>
+            </div>
+
 
             <div class="cards">
                 <div class="item__img">
