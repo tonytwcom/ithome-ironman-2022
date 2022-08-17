@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-cssselector</title>
+        <!-- <link rel="stylesheet" href="../reset.css" /> -->
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js"></script>
+        <style>
+            * {
+                /* margin: 0;
+                padding: 0; */
+                /* list-style: none; */
+                font-family: '微軟正黑體';
+            }
+            html {
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #dbdbe5;
+                background-color: #eee;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                transform: scale(1);
+                transition: 1.5s;
+            }
+
+            img:hover {
+                transform: scale(1.5);
+                transition: 0.5s;
+            }
+            .item__img {
+                overflow: hidden;
+
+                height: 160px;
+                object-fit: cover;
+                object-position: center center;
+            }
+
+            .header {
+                line-height: 50px;
+                height: 50px;
+                text-align: center;
+                background: #333;
+                color: wheat;
+                margin: 0;
+                font-size: 30px;
+                letter-spacing: 5px;
+            }
+
+            .container {
+                margin: 50px;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: 10px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .cards {
+                /* width: 300px; */
+                width: 100%;
+                border: solid 1px rgba(0, 0, 0, 0.15);
+                padding: 15px 20px;
+                box-sizing: border-box;
+                border-radius: 10px;
+                background-color: rgba(238, 238, 238, 0.6);
+                box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+            }
+
+            .color__all {
+                color: orchid;
+                /* background: #000; */
+                /* display: inline; */
+            }
+
+            #color__id {
+                color: rgb(69, 69, 182);
+            }
+
+            .color__class {
+                color: rgb(137, 202, 137);
+            }
+
+            .color__X {
+                color: green;
+            }
+            .color__Y {
+                color: rgb(69, 69, 182);
+            }
+
+            .color__X + .color__Y {
+                color: orchid;
+            }
+
+            .color__X ~ .color__Y--all {
+                color: rgb(255, 136, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">30種選擇器實作</div>
+        <div class="container">
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=1" />
+                </div>
+                <h3 class="color__default">預設</h3>
+                <ul class="color__default">
+                    <li class="color__default">第一層</li>
+                    <ul class="color__default">
+                        <li class="color__default">第二層</li>
+                        <li class="color__default">第二層</li>
+                        <ul class="color__default">
+                            <li class="color__default">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color__default">第一層</li>
+                    <li class="color__default">第一層</li>
+                    <ul class="color__default">
+                        <li class="color__default">第二層</li>
+                        <ul class="color__default">
+                            <li class="color__default">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color__default">第一層</li>
+                </ul>
+            </div>
+
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=2" />
+                </div>
+                <h3 class="color__all">* 選擇器</h3>
+                <ul class="color__all">
+                    <li class="color__all">第一層</li>
+                    <ul class="color__all">
+                        <li class="color__all">第二層</li>
+                        <li class="color__all">第二層</li>
+                        <ul class="color__all">
+                            <li class="color__all">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color__all">第一層</li>
+                    <li class="color__all">第一層</li>
+                    <ul class="color__all">
+                        <li class="color__all">第二層</li>
+                        <ul class="color__all">
+                            <li class="color__all">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color__all">第一層</li>
+                </ul>
+            </div>
+
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=3" />
+                </div>
+                <h3># 選擇器（選 id）</h3>
+                <ul class="color">
+                    <li class="color">第一層</li>
+                    <ul class="color">
+                        <li class="color">第二層</li>
+                        <li class="color">第二層</li>
+                        <ul class="color">
+                            <li class="color" id="color__id">第三層（id）</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                    <li class="color">第一層</li>
+                    <ul class="color">
+                        <li class="color">第二層</li>
+                        <ul class="color">
+                            <li class="color">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                </ul>
+            </div>
+
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=4" />
+                </div>
+                <h3>. 選擇器（選 class）</h3>
+                <ul class="color">
+                    <li class="color">第一層</li>
+                    <ul class="color">
+                        <li class="color">第二層</li>
+                        <li class="color">第二層</li>
+                        <ul class="color">
+                            <li class="color">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                    <li class="color">第一層</li>
+                    <ul class="color">
+                        <li class="color color">第二層</li>
+                        <ul class="color">
+                            <li class="color color__class">第三層（class）</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                </ul>
+            </div>
+
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=5" />
+                </div>
+                <h3>X Y 選擇器（選子對象）</h3>
+                <ul class="color">
+                    <li class="color color__X">第一層（X）</li>
+                    <ul class="color">
+                        <li class="color">第二層</li>
+                        <li class="color color__Y">第二層（Y）</li>
+                        <ul class="color">
+                            <li class="color">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                    <li class="color color__X">第一層（X）</li>
+                    <ul class="color">
+                        <li class="color color__Y">第二層（Y）</li>
+                        <ul class="color">
+                            <li class="color">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                </ul>
+            </div>
+
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=6" />
+                </div>
+                <h3>X 選擇器（單一選取，子層全選）</h3>
+                <ul class="color">
+                    <li class="color">第一層</li>
+                    <ul class="color">
+                        第二層 ul（X）
+                        <li class="color">第二層</li>
+                        <li class="color">第二層</li>
+                        <ul class="color color__X">
+                            第三層 ul（X）
+                            <li class="color">第三層</li>
+                            <li class="color">第三層</li>
+                            <li class="color">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                    <li class="color">第一層</li>
+                    <ul class="color color__X">
+                        第二層 ul（X）
+                        <li class="color">第二層</li>
+                        <ul class="color">
+                            第三層 ul（X）
+                            <li class="color">第三層</li>
+                        </ul>
+                    </ul>
+                    <li class="color">第一層</li>
+                </ul>
+            </div>
+
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=7" />
+                </div>
+                <h3>X + Y 選擇器（相鄰兄弟選取）</h3>
+                <ul class="color">
+                    <li class="color color__X">第一層（X）</li>
+                    <li class="color color__X">第一層（X）</li>
+                    <ul class="color color__Y">
+                        第二層 ul（Ｘ＋Ｙ）
+                        <li class="color color__Y">第二層（Y）</li>
+                        <li class="color color__Y">第二層（Y）</li>
+                        <ul class="color color__Y">
+                            第三層 ul（Ｙ）
+                            <li class="color color__X">第三層 (X)</li>
+                        </ul>
+                    </ul>
+                    <li class="color color__Y">第一層</li>
+                    <li class="color color__X">第一層</li>
+                    <ul class="color color__X">
+                        第二層 ul（X）
+                        <li class="color color__X">第二層（Ｘ）</li>
+                        <ul class="color color__X">
+                            第三層 ul（X）
+                            <li class="color">第三層（Ｘ）</li>
+                        </ul>
+                    </ul>
+                    <li class="color color__Y">第一層（Ｘ＋Ｙ）</li>
+                </ul>
+            </div>
+
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=8" />
+                </div>
+                <h3>X + Y 選擇器（相鄰兄弟選取）</h3>
+                <ul class="color">
+                    <li class="color color__X">第一層（X）</li>
+                    <li class="color color__X">第一層（X）</li>
+                    <ul class="color color__Y--all">
+                        第二層 ul（Ｘ＋Ｙ）
+                        <li class="color color__Y--all">第二層（Y）</li>
+                        <li class="color color__Y--all">第二層（Y）</li>
+                        <ul class="color color__Y--all">
+                            第三層 ul（Ｙ）
+                            <li class="color color__X">第三層 (X)</li>
+                        </ul>
+                    </ul>
+                    <li class="color color__Y--all">第一層</li>
+                    <li class="color color__X">第一層</li>
+                    <ul class="color color__X">
+                        第二層 ul（X）
+                        <li class="color color__X">第二層（Ｘ）</li>
+                        <ul class="color color__X">
+                            第三層 ul（X）
+                            <li class="color">第三層（Ｘ）</li>
+                        </ul>
+                    </ul>
+                    <li class="color color__Y--all">第一層（Ｘ＋Ｙ）</li>
+                </ul>
+            </div>
+            <div class="cards">
+                <div class="item__img">
+                    <img src="https://picsum.photos/300/200?random=9" />
+                </div>
+                <h3>X + Y 選擇器（相鄰兄弟選取）</h3>
+                <ul class="color">
+                    <li class="color color__X">第一層（X）</li>
+                    <li class="color color__X">第一層（X）</li>
+                    <ul class="color color__Y--all">
+                        第二層 ul（Ｘ＋Ｙ）
+                        <li class="color color__Y--all">第二層（Y）</li>
+                        <li class="color color__Y--all">第二層（Y）</li>
+                        <ul class="color color__Y--all">
+                            第三層 ul（Ｙ）
+                            <li class="color color__X">第三層 (X)</li>
+                        </ul>
+                    </ul>
+                    <li class="color color__Y--all">第一層</li>
+                    <li class="color color__X">第一層</li>
+                    <ul class="color color__X">
+                        第二層 ul（X）
+                        <li class="color color__X">第二層（Ｘ）</li>
+                        <ul class="color color__X">
+                            第三層 ul（X）
+                            <li class="color">第三層（Ｘ）</li>
+                        </ul>
+                    </ul>
+                    <li class="color color__Y--all">第一層（Ｘ＋Ｙ）</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

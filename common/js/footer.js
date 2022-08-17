@@ -8,7 +8,7 @@ export function showFooter() {
                 <button
                     onclick="location.href = '#';"
                     type="button"
-                    class="btn btn-outline-light btn-rounded"
+                    class="btnx btn-outline-lightx btn-rounded"
                 >
                     Go !
                 </button>

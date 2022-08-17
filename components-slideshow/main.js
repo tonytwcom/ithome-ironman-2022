@@ -21,6 +21,7 @@ window.onload = function () {
         });
     }
 
+    
     setInterval(function () {
         console.log('good');
         plusSlides();
