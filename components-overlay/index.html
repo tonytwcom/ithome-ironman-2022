@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-overlay</title>
+        <link rel="stylesheet" href="../reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js"></script>
+        <style>
+            body {
+                height: 1800px;
+                
+            }
+            .overlay {
+                position: fixed;
+                width: 0;
+                height: 100%;
+                /* position: fixed; */
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 255, 0.3);
+                transition: 0.8s;
+            }
+            #closelay {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="overlay" id="toright">
+            <button id="closelay">close</button>
+        </div>
+        <button class="overlay__btn" id="overlay__btn">To Right</button>
+    </body>
+    <script>
+        let toright = document.getElementById('overlay__btn');
+        let closelays = document.getElementById('closelay');
+
+        toright.addEventListener('click', torightFn, false);
+        closelays.addEventListener('click', closelay, false);
+        function torightFn() {
+            document.getElementById('toright').style.width = '50%';
+        }
+
+        function closelay() {
+            document.getElementById('toright').style.width = '0%';
+        }
+    </script>
+
+
+
+</html>
+
