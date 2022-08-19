@@ -8,66 +8,166 @@
         <link rel="stylesheet" href="../reset.css" />
         <link rel="stylesheet" href="style.css" />
         <script src="main.js"></script>
+        <style>
+            body {
+                background-color: #474e5d;
+                font-family: Helvetica, sans-serif;
+            }
+            .timeline {
+                position: relative;
+                max-width: 1200px;
+            }
+            .timeline::after {
+                content: '';
+                position: absolute;
+                background-color: white;
+                width: 6px;
+                top: 0;
+                margin-left: 10px;
+                bottom: 0;
+            }
+
+            .container {
+                position: relative;
+                margin: 0 40px;
+            }
+
+            .container::after {
+                content: '';
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border: 4px solid #ff9f55;
+                background-color: white;
+                position: absolute;
+                top: 27px;
+                left: -43px;
+                z-index: 1;
+            }
+
+            .content {
+                width: 100%;
+                margin: 20px 30px;
+                padding: 10px 40px;
+                border-radius: 10px;
+                background: white;
+                box-sizing: border-box;
+            }
+
+            .left::before,
+            .right::before {
+                content: '';
+                border: medium solid white;
+                height: 0;
+                position: absolute;
+                top: 32px;
+                left: 20px;
+                width: 0;
+                z-index: 1;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            @media (min-width: 576px) {
+                .container {
+                    width: 100%;
+                    border: 2px solid red;
+                }
+                .content {
+                    width: 50%;
+                }
+                .right {
+                    /* left: 50%; */
+                }
+                .timeline::after {
+                    /* right: 50%; */
+                }
+                .container::after {
+                }
+                .container {
+                    width: 100%;
+                    padding-left: 70px;
+                    padding-right: 25px;
+                }
+                .left::after,
+                .right::after {
+                    left: 15px;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                /* .content {
+                    width: 50%;
+                } */
+            }
+            @media (min-width: 992px) and (max-width: 119.98px) {
+            }
+            @media (min-width: 1200px) and (max-width: 1399.98px) {
+            }
+            @media (min-width: 1400px) {
+            }
+        </style>
     </head>
     <body>
-        <div class="container even">
-            <div class="content">
-                <h2>2022</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam provident
-                    suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur dolorum impedit
-                    repudiandae possimus facilis corporis nisi?
-                </p>
+        <div class="timeline">
+            <div class="container left">
+                <div class="content">
+                    <h2>2022</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
+                        provident suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur
+                        dolorum impedit repudiandae possimus facilis corporis nisi?
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="container odd">
-            <div class="content">
-                <h2>2019</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam provident
-                    suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur dolorum impedit
-                    repudiandae possimus facilis corporis nisi?
-                </p>
+            <div class="container right">
+                <div class="content">
+                    <h2>2019</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
+                        provident suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur
+                        dolorum impedit repudiandae possimus facilis corporis nisi?
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="container even">
-            <div class="content">
-                <h2>2016</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam provident
-                    suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur dolorum impedit
-                    repudiandae possimus facilis corporis nisi?
-                </p>
+            <div class="container left">
+                <div class="content">
+                    <h2>2016</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
+                        provident suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur
+                        dolorum impedit repudiandae possimus facilis corporis nisi?
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="container odd">
-            <div class="content">
-                <h2>2015</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam provident
-                    suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur dolorum impedit
-                    repudiandae possimus facilis corporis nisi?
-                </p>
+            <div class="container right">
+                <div class="content">
+                    <h2>2015</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
+                        provident suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur
+                        dolorum impedit repudiandae possimus facilis corporis nisi?
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="container even">
-            <div class="content">
-                <h2>2012</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam provident
-                    suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur dolorum impedit
-                    repudiandae possimus facilis corporis nisi?
-                </p>
+            <div class="container left">
+                <div class="content">
+                    <h2>2012</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
+                        provident suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur
+                        dolorum impedit repudiandae possimus facilis corporis nisi?
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="container odd">
-            <div class="content">
-                <h2>2007</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam provident
-                    suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur dolorum impedit
-                    repudiandae possimus facilis corporis nisi?
-                </p>
+            <div class="container right">
+                <div class="content">
+                    <h2>2007</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
+                        provident suscipit laborum assumenda doloribus, itaque tempore! Explicabo delectus aspernatur
+                        dolorum impedit repudiandae possimus facilis corporis nisi?
+                    </p>
+                </div>
             </div>
         </div>
     </body>
