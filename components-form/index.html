@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-form</title>
+        <link rel="stylesheet" href="../reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js"></script>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                font-family: '微軟正黑體';
+                border: none;
+            }
+            html {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* background: #8d5a27; */
+                background: url('./RBdLxn8.jpg');
+                background-size: cover;
+                background-position: -500px;
+                background-repeat: no-repeat;
+            }
+
+            form {
+                /* line-height: 2em; */
+
+                display: block;
+            }
+
+            .info__block {
+                display: flex;
+                margin: 10px 0;
+            }
+            label {
+                display: block;
+                width: 20%;
+            }
+
+            .info {
+                /* display: flex; */
+            }
+            .info__name {
+            }
+
+            label {
+                width: 6rem;
+            }
+
+            fieldset {
+                padding: 20px;
+                background: rgba(0, 0, 0, 0.6);
+                border-radius: 10px;
+                color: white;
+            }
+            textarea {
+                letter-spacing: 3px;
+                font-size: 0.5rem;
+            }
+
+            input,
+            select,
+            textarea {
+                padding: 0 10px;
+                color: #333;
+                border-radius: 5px;
+                word-break: break-all;
+
+                /* border: 2px solid red;
+
+                align-items: center;
+                display: flex;
+
+                margin: 15px 5px; */
+            }
+        </style>
+    </head>
+    <body>
+        <form onsubmit="alert('表單送出')" action="" method="get" target="_blank">
+            <fieldset>
+                <legend>角色創建</legend>
+                <!-- 
+                <div class="info">
+                    <div class="info__name">
+                        <label for="fname">遊戲ID：</label>
+                        <label for="lname">種族：</label>
+                        <label for="sex">自我介紹：</label>
+                    </div>
+
+                    <div class="info__value">
+                        <input type="text" id="fname" name="fname" value="Google" />
+                        <select name="race" id="race">
+                            <option value="human">人族</option>
+                            <option value="god">神族</option>
+                            <option value="ddemon">魔族</option>
+                        </select>
+
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div> -->
+
+                <div class="info">
+                    <div class="info__block">
+                        <label for="fname">遊戲ID：</label>
+                        <input type="text" id="fname" name="fname" value="村名 A" />
+                    </div>
+
+                    <div class="info__block">
+                        <label for="lname">種族：</label>
+                        <select name="race" id="race">
+                            <option value="human">人族</option>
+                            <option value="god">神族</option>
+                            <option value="ddemon">魔族</option>
+                        </select>
+                    </div>
+
+                    <div class="info__block">
+                        <label for="bio">自我介紹：</label>
+                        <textarea name="" id="" cols="30" rows="10">
+    文化人類學上，人被定義為能夠使用語言、文字等具有複雜的社會組織與科技發展的生物，尤其是他們能夠建立團體與機構來達到互相支持與協助的目的。
+
+    行為學上來看人類的特徵有：懂得使用語言，文字，具有多種複雜的互助性社會組織，喜歡發展複雜的科技的成就感。這些行為學上的差異也衍生出各文化不同的信仰、傳說、儀式、社會規範。
+
+    精神層面上，人被描述為有靈魂的種類，在宗教與歷史中，這些靈魂被認為與神聖的力量或存在有關；而在神話學中，人的靈魂也會被拿來與其他的人型動物作對照。如人工智慧或天使是沒有肉體的靈體，獸人或亞人則只有欲望和膚淺的情緒。
+                        </textarea>
+                    </div>
+
+                    <div class="info__value"></div>
+                </div>
+
+                <input type="submit" value="Submit" />
+            </fieldset>
+        </form>
+    </body>
+</html>
