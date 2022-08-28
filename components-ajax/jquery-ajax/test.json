@@ -1,0 +1,39 @@
+{
+    "id": 7366,
+    "uid": "d33d427b-3cf9-47c3-b671-559e1cd2e044",
+    "password": "WK3PJF6IQM",
+    "first_name": "Abbie",
+    "last_name": "Kshlerin",
+    "username": "abbie.kshlerin",
+    "email": "abbie.kshlerin@email.com",
+    "avatar": "https://robohash.org/dictacorporisasperiores.png?size=300x300&set=set1",
+    "gender": "Polygender",
+    "phone_number": "+354 338.652.1147 x645",
+    "social_insurance_number": "530711787",
+    "date_of_birth": "1970-03-07",
+    "employment": {
+    "title": "Marketing Technician",
+    "key_skill": "Self-motivated"
+    },
+    "address": {
+    "city": "Xuanside",
+    "street_name": "Raye Street",
+    "street_address": "8578 Johnnie Summit",
+    "zip_code": "63700-7250",
+    "state": "Iowa",
+    "country": "United States",
+    "coordinates": {
+    "lat": -67.42281213437616,
+    "lng": -105.46510280703568
+    }
+    },
+    "credit_card": {
+    "cc_number": "4719990637572"
+    },
+    "subscription": {
+    "plan": "Student",
+    "status": "Idle",
+    "payment_method": "Alipay",
+    "term": "Monthly"
+    }
+    }
