@@ -7,11 +7,17 @@
         <title>components-card</title>
         <!-- <link rel="stylesheet" href="../reset.css" /> -->
         <link rel="stylesheet" href="style.css" />
-        <script src="https://kit.fontawesome.com/c382d0f4cc.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/c382d0f4cc.js" crossorigin="anonymous"></script> -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
         <style>
             * {
                 margin: 0;
                 padding: 0;
+                font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFangTC-Light', 'STHeitiTC-Light',
+                    'Microsoft JhengHei', '微軟正黑體', sans-serif;
             }
             html {
                 width: 100%;
@@ -22,28 +28,79 @@
             }
             .container {
                 display: grid;
-                grid-template-columns: auto auto auto auto;
-                flex-wrap: wrap;
+                grid-template-columns: auto auto;
+                gap: 12px;
             }
 
             .card {
-                border: 3px solid #ffa;
-                max-width: 170px;
-                overflow: hidden;
+                /* max-width: 170px; */
+                /* width: 100%; */
+                border-radius: 3px;
                 font-size: 14px;
+                overflow: hidden;
+                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.05), 0 2px 20px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }
+
+            .card__block {
+                position: relative;
+                overflow: hidden;
             }
             .card__img {
                 /* width: 183px;
                 height: 103px; */
                 width: 170px;
                 height: 95px;
-                border: 1px solid #000;
-                background-image: url('./video-img.jpg');
+                /* background-image: url('./video-img.jpg'); */
+                /* background-image: url(); */
+                object-fit: cover;
                 background-size: cover;
+                transition: 0.5s;
             }
+
+            .card__img:hover {
+                transform: scale(1.5);
+                transition: 0.5s;
+            }
+
+            .card__heart {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 5px;
+            }
+
             .time__block {
+                margin: 5px;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                color: #fff;
+                background: rgba(55, 55, 55, 0.9);
+                display: flex;
+                position: absolute;
+                top: 0;
             }
+
             .time__icon {
+                margin-right: 3px;
+            }
+
+            .card__heart {
+            }
+
+            .video__block {
+                font-weight: bold;
+                margin: 5px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                bottom: 0;
+            }
+
+            .video__icon {
+                margin-right: 3px;
             }
 
             .content {
@@ -52,103 +109,208 @@
                 align-items: baseline;
                 padding: 4px 8px;
                 vertical-align: middle;
-                border: 1px solid #000;
             }
 
             .content__icon {
                 margin: 0 3px;
                 box-sizing: border-box;
             }
+
+            .fa-heart-o {
+                color: #fff;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+            .content__title {
+                max-width: 80px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .delays {
+                animation-delay: 4s;
+            }
+
+            .content__title {
+            }
+
+            .marquee__text {
+                animation: slide 7s linear infinite;
+            }
+
+            .marquee__text:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes slide {
+                /* 0% {
+                    transform: translatex(100%);
+                }
+
+                100% {
+                    transform: translatex(-100%);
+                } */
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+
+            @media (min-width: 575.98px) {
+                .container {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                }
+            }
+
+            @media (min-width: 767.98px) {
+                .container {
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                }
+            }
+
+            @media (min-width: 991.98px) {
+                .container {
+                    display: grid;
+                    grid-template-columns: auto auto auto auto auto;
+                }
+            }
+
+            @media (min-width: 1199.98px) {
+            }
+
+            @media (min-width: 1399.98px) {
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="card">
-                <div class="card__img"></div>
-                <div class="time__block">
-                    <div class="time__icon"></div>
-                    <div class="time__text"></div>
-                </div>
-                <div class="card__heart"></div>
-                <div class="video__block">
-                    <div class="video__icon"></div>
-                    <div class="video__text">第6集</div>
+                <div class="card__block">
+                    <div class="card__img">
+                        <img src="https://source.unsplash.com/random/400x300?sig=1" />
+                    </div>
+                    <div class="time__block">
+                        <div class="time__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <div class="time__text">22:00</div>
+                    </div>
+                    <div class="card__heart"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="video__block">
+                        <div class="video__icon"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+                        <div class="video__text">第9集</div>
+                    </div>
                 </div>
                 <div class="content">
-                    <div class="content__title">OVERLORD</div>
-                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
-                    <div class="content__number">118.6萬</div>
+                    <div class="content__title">
+                        <div class="marquee__text">OVERLORD</div>
+                    </div>
+                    <div class="content__icon"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                    <div class="content__number">197.1萬</div>
                 </div>
             </div>
+
             <div class="card">
-                <div class="card__img"></div>
-                <div class="time__block">
-                    <div class="time__icon"></div>
-                    <div class="time__text"></div>
-                </div>
-                <div class="card__heart"></div>
-                <div class="video__block">
-                    <div class="video__icon"></div>
-                    <div class="video__text">第6集</div>
+                <div class="card__block">
+                    <div class="card__img">
+                        <img src="https://source.unsplash.com/random/400x300?sig=2" />
+                    </div>
+                    <div class="time__block">
+                        <div class="time__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <div class="time__text">22:30</div>
+                    </div>
+                    <div class="card__heart"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="video__block">
+                        <div class="video__icon"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+                        <div class="video__text">第7集</div>
+                    </div>
                 </div>
                 <div class="content">
-                    <div class="content__title">OVERLORD</div>
-                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
-                    <div class="content__number">118.6萬</div>
+                    <div class="content__title">
+                        <div class="marquee__text">來自深淵 烈日的黃金鄉</div>
+                    </div>
+                    <div class="content__icon"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                    <div class="content__number">109.2萬</div>
                 </div>
             </div>
+
             <div class="card">
-                <div class="card__img"></div>
-                <div class="time__block">
-                    <div class="time__icon"></div>
-                    <div class="time__text"></div>
-                </div>
-                <div class="card__heart"></div>
-                <div class="video__block">
-                    <div class="video__icon"></div>
-                    <div class="video__text">第6集</div>
+                <div class="card__block">
+                    <div class="card__img">
+                        <img src="https://source.unsplash.com/random/400x300?sig=3" />
+                    </div>
+                    <div class="time__block">
+                        <div class="time__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <div class="time__text">22:05</div>
+                    </div>
+                    <div class="card__heart"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="video__block">
+                        <div class="video__icon"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+                        <div class="video__text">第6集</div>
+                    </div>
                 </div>
                 <div class="content">
-                    <div class="content__title">OVERLORD</div>
-                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
-                    <div class="content__number">118.6萬</div>
+                    <div class="content__title">
+                        <div class="marquee__text">在地下城尋求邂逅是否搞錯了什麼 第四季</div>
+                    </div>
+                    <div class="content__icon"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                    <div class="content__number">106.9萬</div>
                 </div>
             </div>
+
             <div class="card">
-                <div class="card__img"></div>
-                <div class="time__block">
-                    <div class="time__icon"></div>
-                    <div class="time__text"></div>
-                </div>
-                <div class="card__heart"></div>
-                <div class="video__block">
-                    <div class="video__icon"></div>
-                    <div class="video__text">第6集</div>
+                <div class="card__block">
+                    <div class="card__img">
+                        <img src="https://source.unsplash.com/random/400x300?sig=4" />
+                    </div>
+                    <div class="time__block">
+                        <div class="time__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <div class="time__text">22:00</div>
+                    </div>
+                    <div class="card__heart"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="video__block">
+                        <div class="video__icon"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+                        <div class="video__text">第7集</div>
+                    </div>
                 </div>
                 <div class="content">
-                    <div class="content__title">OVERLORD</div>
-                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
-                    <div class="content__number">118.6萬</div>
+                    <div class="content__title">
+                        <div class="marquee__text">SPY×FAMILY 間諜家家酒</div>
+                    </div>
+                    <div class="content__icon"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                    <div class="content__number">942.3萬</div>
                 </div>
             </div>
+
             <div class="card">
-                <div class="card__img"></div>
-                <div class="time__block">
-                    <div class="time__icon"></div>
-                    <div class="time__text"></div>
-                </div>
-                <div class="card__heart"></div>
-                <div class="video__block">
-                    <div class="video__icon"></div>
-                    <div class="video__text">第6集</div>
+                <div class="card__block">
+                    <div class="card__img">
+                        <img src="https://source.unsplash.com/random/400x300?sig=5" />
+                    </div>
+                    <div class="time__block">
+                        <div class="time__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <div class="time__text">22:00</div>
+                    </div>
+                    <div class="card__heart"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="video__block">
+                        <div class="video__icon"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+                        <div class="video__text">第21集</div>
+                    </div>
                 </div>
                 <div class="content">
-                    <div class="content__title">OVERLORD</div>
-                    <div class="content__icon"><i class="fa-solid fa-eye"></i></div>
-                    <div class="content__number">118.6萬</div>
+                    <div class="content__title">
+                        <div class="marquee__text">出租女友 第二季</div>
+                    </div>
+                    <div class="content__icon"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                    <div class="content__number">79.5萬</div>
                 </div>
             </div>
         </div>
+
         <script src="main.js"></script>
     </body>
 </html>
