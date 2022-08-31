@@ -23,11 +23,13 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                /* background: #8d5a27; */
-                background: url('./RBdLxn8.jpg');
+                /* background: url('./RBdLxn8.jpg');
+                
+                background-position: -500px;*/
+                background-image: linear-gradient(135deg, rgb(54, 60, 234), #ced1d3, rgb(234, 159, 255));
+                background: url('https://source.unsplash.com/random/1920x1080?sig=1');
+                background-repeat: no-repeat; 
                 background-size: cover;
-                background-position: -500px;
-                background-repeat: no-repeat;
             }
 
             form {
@@ -43,12 +45,6 @@
             label {
                 display: block;
                 width: 20%;
-            }
-
-            .info {
-                /* display: flex; */
-            }
-            .info__name {
             }
 
             label {
@@ -73,7 +69,7 @@
                 color: #333;
                 border-radius: 5px;
                 word-break: break-all;
-
+                
                 /* border: 2px solid red;
 
                 align-items: center;
@@ -84,28 +80,9 @@
         </style>
     </head>
     <body>
-        <form onsubmit="alert('表單送出')" action="" method="get" target="_blank">
+        <form onsubmit="alert('表單已送出')" action="https://www.google.com" method="get" target="_blank">
             <fieldset>
                 <legend>角色創建</legend>
-                <!-- 
-                <div class="info">
-                    <div class="info__name">
-                        <label for="fname">遊戲ID：</label>
-                        <label for="lname">種族：</label>
-                        <label for="sex">自我介紹：</label>
-                    </div>
-
-                    <div class="info__value">
-                        <input type="text" id="fname" name="fname" value="Google" />
-                        <select name="race" id="race">
-                            <option value="human">人族</option>
-                            <option value="god">神族</option>
-                            <option value="ddemon">魔族</option>
-                        </select>
-
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                </div> -->
 
                 <div class="info">
                     <div class="info__block">
@@ -136,7 +113,7 @@
                     <div class="info__value"></div>
                 </div>
 
-                <input type="submit" value="Submit" />
+                <input type="submit" value="提交" />
             </fieldset>
         </form>
     </body>
