@@ -12,6 +12,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
+        <script></script>
         <style>
             * {
                 margin: 0;
@@ -26,15 +27,22 @@
                 justify-content: center;
                 align-items: center;
             }
+
             .container {
                 display: grid;
                 grid-template-columns: auto auto;
                 gap: 12px;
+                padding: 16px 12px 0;
+                max-width: 1200px;
             }
 
+            /* .container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            } */
+
             .card {
-                /* max-width: 170px; */
-                /* width: 100%; */
                 border-radius: 3px;
                 font-size: 14px;
                 overflow: hidden;
@@ -46,14 +54,10 @@
                 position: relative;
                 overflow: hidden;
             }
+
             .card__img {
-                /* width: 183px;
-                height: 103px; */
                 width: 170px;
                 height: 95px;
-                /* background-image: url('./video-img.jpg'); */
-                /* background-image: url(); */
-                object-fit: cover;
                 background-size: cover;
                 transition: 0.5s;
             }
@@ -86,7 +90,10 @@
                 margin-right: 3px;
             }
 
-            .card__heart {
+            .fa-heart-o {
+                font-size: 1rem;
+                font-weight: bold;
+                color: #fff;
             }
 
             .video__block {
@@ -116,24 +123,16 @@
                 box-sizing: border-box;
             }
 
-            .fa-heart-o {
-                color: #fff;
-                font-size: 1rem;
-                font-weight: bold;
-            }
-
             .content__title {
-                max-width: 80px;
+                /* max-width: 80px; */
                 overflow: hidden;
                 white-space: nowrap;
-                text-overflow: ellipsis;
+                /* text-overflow: ellipsis; */
             }
 
-            .delays {
-                animation-delay: 4s;
-            }
-
-            .content__title {
+            .content__number {
+                white-space: nowrap;
+                border: 2px solid red;
             }
 
             .marquee__text {
@@ -145,13 +144,6 @@
             }
 
             @keyframes slide {
-                /* 0% {
-                    transform: translatex(100%);
-                }
-
-                100% {
-                    transform: translatex(-100%);
-                } */
                 from {
                     transform: translateX(100%);
                 }
@@ -165,26 +157,83 @@
                     display: grid;
                     grid-template-columns: auto auto;
                 }
+                .card__img {
+                    max-width: 250px;
+                    max-height: 140px;
+                    background-size: cover;
+                    transition: 0.5s;
+                }
+                .content {
+                    border: 2px solid red;
+                    max-width: 180px;
+                    font-size: 14px;
+                    white-space: nowrap;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    border: 2px solid red;
+                }
+                .content__title {
+                    flex-grow: 1;
+                }
+                .content__number {
+                    white-space: nowrap;
+                }
             }
 
             @media (min-width: 767.98px) {
-                .container {
+                /* .container {
                     display: grid;
                     grid-template-columns: auto auto auto;
                 }
+                .card__img {
+                    max-width: 250px;
+                    max-height: 140px;
+                    background-size: cover;
+                    transition: 0.5s;
+                }
+                .content {
+                    border: 2px solid red;
+                    font-size: 1rem;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                }
+                .content__title {
+                    max-width: 80px;
+                    flex-grow: 1;
+                }
+                .content__number {
+                    white-space: nowrap;
+                } */
             }
 
             @media (min-width: 991.98px) {
-                .container {
-                    display: grid;
-                    grid-template-columns: auto auto auto auto auto;
-                }
             }
 
             @media (min-width: 1199.98px) {
             }
 
             @media (min-width: 1399.98px) {
+                /* .container {
+                    display: grid;
+                    grid-template-columns: auto auto auto auto auto;
+                }
+                .card__img {
+                    max-width: 250px;
+                    max-height: 140px;
+                    background-size: cover;
+                    transition: 0.5s;
+                }
+                .content {
+                    font-size: 1rem;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                }
+                .content__title {
+                    flex-grow: 1;
+                }
+                .content__number {
+                    white-space: nowrap;
+                } */
             }
         </style>
     </head>
@@ -195,6 +244,7 @@
                     <div class="card__img">
                         <img src="https://source.unsplash.com/random/400x300?sig=1" />
                     </div>
+
                     <div class="time__block">
                         <div class="time__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
                         <div class="time__text">22:00</div>
