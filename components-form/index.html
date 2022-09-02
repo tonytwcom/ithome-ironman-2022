@@ -14,7 +14,8 @@
                 margin: 0;
                 padding: 0;
                 list-style: none;
-                font-family: '微軟正黑體';
+                font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFangTC-Light', 'STHeitiTC-Light',
+                    'Microsoft JhengHei', '微軟正黑體', sans-serif;
                 border: none;
             }
             html {
@@ -23,12 +24,9 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                /* background: url('./RBdLxn8.jpg');
-                
-                background-position: -500px;*/
                 background-image: linear-gradient(135deg, rgb(54, 60, 234), #ced1d3, rgb(234, 159, 255));
                 background: url('https://source.unsplash.com/random/1920x1080?sig=1');
-                background-repeat: no-repeat; 
+                background-repeat: no-repeat;
                 background-size: cover;
             }
 
@@ -36,6 +34,10 @@
                 /* line-height: 2em; */
 
                 display: block;
+            }
+
+            .info__career {
+                display: flex;
             }
 
             .info__block {
@@ -69,13 +71,28 @@
                 color: #333;
                 border-radius: 5px;
                 word-break: break-all;
-                
+
                 /* border: 2px solid red;
 
                 align-items: center;
                 display: flex;
 
                 margin: 15px 5px; */
+            }
+
+            .info__career input {
+                margin-left: 12px;
+            }
+
+            .over__button {
+                margin-top: 24px;
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 5px;
+            }
+
+            .info {
+            
             }
         </style>
     </head>
@@ -87,7 +104,7 @@
                 <div class="info">
                     <div class="info__block">
                         <label for="fname">遊戲ID：</label>
-                        <input type="text" id="fname" name="fname" value="村名 A" />
+                        <input type="text" id="fname" name="fname" placeholder="村民 A" />
                     </div>
 
                     <div class="info__block">
@@ -95,7 +112,7 @@
                         <select name="race" id="race">
                             <option value="human">人族</option>
                             <option value="god">神族</option>
-                            <option value="ddemon">魔族</option>
+                            <option value="demon">魔族</option>
                         </select>
                     </div>
 
@@ -110,10 +127,18 @@
                         </textarea>
                     </div>
 
-                    <div class="info__value"></div>
+                    <div class="info__career">
+                        <p>職業：</p>
+                        <input type="radio" name="career" checked />戰士 <input type="radio" name="career" />射手
+                        <input type="radio" name="career" />僧侶 <input type="radio" name="career" />法師
+                        <input type="radio" name="career" />盜賊
+                    </div>
                 </div>
 
-                <input type="submit" value="提交" />
+                <div class="over__button">
+                    <input type="submit" value="提交" />
+                    <input type="reset" value="重設" />
+                </div>
             </fieldset>
         </form>
     </body>
