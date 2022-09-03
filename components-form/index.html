@@ -30,11 +30,9 @@
                 background-size: cover;
             }
 
-            form {
-                /* line-height: 2em; */
-
+            /* form {
                 display: block;
-            }
+            } */
 
             .info__career {
                 display: flex;
@@ -44,6 +42,7 @@
                 display: flex;
                 margin: 10px 0;
             }
+
             label {
                 display: block;
                 width: 20%;
@@ -51,6 +50,9 @@
 
             label {
                 width: 6rem;
+                word-wrap: break-word;
+                font-size: 14px;
+                cursor: pointer;
             }
 
             fieldset {
@@ -59,6 +61,7 @@
                 border-radius: 10px;
                 color: white;
             }
+
             textarea {
                 letter-spacing: 3px;
                 font-size: 0.5rem;
@@ -67,21 +70,19 @@
             input,
             select,
             textarea {
+                width: 100%;
                 padding: 0 10px;
                 color: #333;
-                border-radius: 5px;
+                box-sizing: border-box;
+                cursor: pointer;
                 word-break: break-all;
-
-                /* border: 2px solid red;
-
-                align-items: center;
-                display: flex;
-
-                margin: 15px 5px; */
+                
             }
 
             .info__career input {
-                margin-left: 12px;
+                margin-left: 10px;
+                width: 10px;
+                
             }
 
             .over__button {
@@ -91,8 +92,8 @@
                 gap: 5px;
             }
 
-            .info {
-            
+            .info__career label {
+                width: 2rem;
             }
         </style>
     </head>
@@ -129,9 +130,16 @@
 
                     <div class="info__career">
                         <p>職業：</p>
-                        <input type="radio" name="career" checked />戰士 <input type="radio" name="career" />射手
-                        <input type="radio" name="career" />僧侶 <input type="radio" name="career" />法師
-                        <input type="radio" name="career" />盜賊
+                        <input type="radio" name="career" id="carrer__soldier" value="soldier" checked />
+                        <label for="carrer__soldier">戰士</label>
+                        <input type="radio" name="career" id="carrer__archer" value="archer" />
+                        <label for="carrer__archer">射手</label>
+                        <input type="radio" name="career" id="carrer__monk" value="monk" />
+                        <label for="carrer__monk">僧侶</label>
+                        <input type="radio" name="career" id="carrer__mage" value="mage" />
+                        <label for="carrer__mage">法師</label>
+                        <input type="radio" name="career" id="carrer__thief" value="thief" />
+                        <label for="carrer__thief">盜賊</label>
                     </div>
                 </div>
 
