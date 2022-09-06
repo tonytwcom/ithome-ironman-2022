@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>components-animation</title>
         <style>
+            html {
+                width: 100%;
+                height: 100%;
+            }
             body {
                 font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFangTC-Light', 'STHeitiTC-Light',
                     'Microsoft JhengHei', '微軟正黑體', sans-serif;
@@ -13,15 +17,24 @@
                 margin: 0;
                 width: 100%;
                 height: 100%;
-                background: url('./bg.jpg');
-                background-attachment: fixed;
+                background: url('./bg.jpg') repeat;
+                background-attachment: scroll;
                 box-sizing: border-box;
                 color: white;
+                background-size: cover;
+                background-position: center center;
+                /* border: 2px solid red; */
             }
 
             h2 {
+                display: block;
                 text-align: center;
+                padding: 30px 0;
             }
+            p {
+                font-size: 1rem;
+            }
+
             .primary__highlight {
                 padding: 5px 10px;
                 border-radius: 5px;
@@ -32,6 +45,8 @@
 
             .animtaion {
                 width: 100%;
+                max-width: 1200px;
+                margin: auto;
                 padding: 20px;
                 box-sizing: border-box;
             }
@@ -42,7 +57,7 @@
                 box-shadow: 2px 2px 3px #888, -2px -2px 3px #888;
                 height: 100%;
                 background: url(./01.png) no-repeat center/ contain;
-                /* border: 2px solid red; */
+
                 transition: 0.8s;
             }
 
@@ -52,7 +67,7 @@
                 background: rgba(226, 222, 222, 0.147);
                 box-shadow: 2px 2px 3px #888, -2px -2px 3px #888;
                 font-size: 1.5rem;
-                height: 200px;
+                height: 300px;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -62,10 +77,34 @@
                 cursor: pointer;
             }
 
-            .animation__flip {
+            /* .animation__flip {
                 display: grid;
                 grid-template-columns: auto;
                 margin-top: 50px;
+            } */
+
+            /* .animation__shake {
+                display: grid;
+                grid-template-columns: auto;
+                margin-top: 50px;
+            } */
+
+            .animation__flip--hover {
+                display: grid;
+                grid-template-columns: auto;
+            }
+            .animation__flip--repeat {
+                display: grid;
+                grid-template-columns: auto;
+            }
+
+            .animation__shake--repeat {
+                display: grid;
+                grid-template-columns: auto;
+            }
+            .animation__spin--repeat {
+                display: grid;
+                grid-template-columns: auto;
             }
 
             .flip__toRight:hover {
@@ -75,10 +114,10 @@
                 transform: rotateY(-180deg);
             }
             .flip__toUp:hover {
-                transform: rotateX(-180deg);
+                transform: perspective(400px) rotateX(-180deg);
             }
             .flip__toDown:hover {
-                transform: rotateX(-180deg);
+                transform: perspective(400px) rotateX(-180deg);
             }
 
             .flip__toRight--repeat {
@@ -89,16 +128,40 @@
             }
             .flip__toUp--repeat {
                 animation: flip__toUp 1s infinite linear;
-                /* border: 2px solid red; */
             }
             .flip__toDown--repeat {
                 animation: flip__toDown 1s infinite linear;
-                /* border: 2px solid red; */
             }
 
-            .shake--repeat {
-                animation: shake 0.5s;
+            .shake__vertical--repeat {
+                animation: shake__vertical 0.2s;
                 animation-iteration-count: infinite;
+            }
+
+            .shake__horizontal--repeat {
+                animation: shake__horizontal 0.2s;
+                animation-iteration-count: infinite;
+            }
+
+            .shake__jump--repeat {
+                animation: shake__jump 0.2s;
+                animation-iteration-count: infinite;
+            }
+
+            .spin__toLeft--repeat {
+                animation: spin__toLeft 1.5s infinite linear;
+            }
+
+            .spin__toRight--repeat {
+                animation: spin__toRight 1.5s infinite linear;
+            }
+
+            .zoom__grow--repeat {
+                animation: zoom__grow 1.5s infinite linear;
+            }
+
+            .zoom__shrink--repeat {
+                animation: zoom__shrink 1.5s infinite linear;
             }
 
             @keyframes flip__toUp {
@@ -140,7 +203,43 @@
                 }
             }
 
-            @keyframes shake {
+            @keyframes shake__vertical {
+                0% {
+                    transform: translateY(0);
+                }
+                25% {
+                    transform: translateY(15px);
+                }
+                50% {
+                    transform: translateY(0px);
+                }
+                75% {
+                    transform: translateY(15px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes shake__horizontal {
+                0% {
+                    transform: translateX(0);
+                }
+                25% {
+                    transform: translateX(15px);
+                }
+                50% {
+                    transform: translateX(0px);
+                }
+                75% {
+                    transform: translateX(15px);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes shake__jump {
                 0% {
                     transform: translate(1px, 1px) rotate(0deg);
                 }
@@ -175,13 +274,77 @@
                     transform: translate(1px, -2px) rotate(-1deg);
                 }
             }
+
+            @keyframes spin__toLeft {
+                from {
+                    transform: rotate(0);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes spin__toRight {
+                from {
+                    transform: rotate(360deg);
+                }
+                to {
+                    transform: rotate(0);
+                }
+            }
+
+            @keyframes zoom__grow {
+                from {
+                    transform: scale(1);
+                }
+                to {
+                    transform: scale(1.2);
+                }
+            }
+
+            @keyframes zoom__shrink {
+                from {
+                    transform: scale(1);
+                }
+                to {
+                    transform: scale(0);
+                }
+            }
+
             @media (min-width: 575.98px) {
+                .animation__flip--hover {
+                    grid-template-columns: auto;
+                    gap: 30px;
+                }
+                .animation__flip--repeat {
+                    grid-template-columns: auto auto;
+                    gap: 30px;
+                }
+                .animation__shake--repeat {
+                    grid-template-columns: auto;
+                    gap: 30px;
+                }
+                .animation__spin--repeat {
+                    grid-template-columns: auto auto;
+                    gap: 30px;
+                }
             }
 
             @media (min-width: 767.98px) {
-                .animation__flip {
-                    grid-template-columns: auto auto auto auto;
-                    gap: 12px;
+                .animation__flip--hover {
+                    grid-template-columns: auto auto;
+                    gap: 30px;
+                }
+                .animation__flip--repeat {
+                    grid-template-columns: auto auto;
+                    gap: 30px;
+                }
+                .animation__shake--repeat {
+                    grid-template-columns: auto auto auto;
+                    gap: 30px;
+                }
+                .animation__spin--repeat {
+                    grid-template-columns: auto auto;
+                    gap: 30px;
                 }
             }
 
@@ -189,6 +352,22 @@
             }
 
             @media (min-width: 1199.98px) {
+                .animation__flip--hover {
+                    grid-template-columns: auto auto auto auto;
+                    gap: 30px;
+                }
+                .animation__flip--repeat {
+                    grid-template-columns: auto auto auto auto;
+                    gap: 30px;
+                }
+                .animation__shake--repeat {
+                    grid-template-columns: auto auto auto;
+                    gap: 30px;
+                }
+                .animation__spin--repeat {
+                    grid-template-columns: auto auto auto auto;
+                    gap: 30px;
+                }
             }
 
             @media (min-width: 1399.98px) {
@@ -198,7 +377,7 @@
     <body>
         <div class="animtaion">
             <h2 class="primary__highlight">Flip an Image ( Hover )</h2>
-            <div class="animation__flip">
+            <div class="animation__flip--hover">
                 <div class="animtaion__itme">
                     <div class="spaceman flip__toRight"></div>
                     <p>Flipping：<span class="primary__highlight">right to left </span></p>
@@ -216,8 +395,9 @@
                     <p>Flipping：<span class="primary__highlight">up to down</span></p>
                 </div>
             </div>
+
             <h2 class="primary__highlight">Flip an Image ( Animate )</h2>
-            <div class="animation__flip">
+            <div class="animation__flip--repeat">
                 <div class="animtaion__itme">
                     <div class="spaceman flip__toRight--repeat"></div>
                     <p>Flipping：<span class="primary__highlight">right to left </span></p>
@@ -235,25 +415,53 @@
                     <p>Flipping：<span class="primary__highlight">up to down</span></p>
                 </div>
             </div>
+
             <h2 class="primary__highlight">Shaking an Image ( Animate )</h2>
-            <div class="animation__shake">
+            <div class="animation__shake--repeat">
                 <div class="animtaion__itme">
-                    <div class="spaceman shake__--repeat"></div>
-                    <p>Flipping：<span class="primary__highlight">right to left </span></p>
+                    <div class="spaceman shake__vertical--repeat"></div>
+                    <p>Shaking：<span class="primary__highlight">Vertical Shaking</span></p>
                 </div>
                 <div class="animtaion__itme">
-                    <div class="spaceman flip__toLeft--repeat"></div>
-                    <p>Flipping：<span class="primary__highlight">left to right</span></p>
+                    <div class="spaceman shake__horizontal--repeat"></div>
+                    <p>Shaking：<span class="primary__highlight">Horizontal Shaking</span></p>
                 </div>
                 <div class="animtaion__itme">
-                    <div class="spaceman flip__toUp--repeat"></div>
-                    <p>Flipping：<span class="primary__highlight">down to up</span></p>
-                </div>
-                <div class="animtaion__itme">
-                    <div class="spaceman flip__toDown--repeat"></div>
-                    <p>Flipping：<span class="primary__highlight">up to down</span></p>
+                    <div class="spaceman shake__jump--repeat"></div>
+                    <p>Shaking：<span class="primary__highlight">jumping</span></p>
                 </div>
             </div>
+
+            <h2 class="primary__highlight">Spinning and Zooming ( Animate )</h2>
+            <div class="animation__spin--repeat">
+                <div class="animtaion__itme">
+                    <div class="spaceman spin__toLeft--repeat"></div>
+                    <p>Spinning：<span class="primary__highlight">right to left </span></p>
+                </div>
+                <div class="animtaion__itme">
+                    <div class="spaceman spin__toRight--repeat"></div>
+                    <p>Spinning：<span class="primary__highlight">right to left</span></p>
+                </div>
+                <div class="animtaion__itme">
+                    <div class="spaceman zoom__grow--repeat"></div>
+                    <p>Flipping：<span class="primary__highlight">zoom grow</span></p>
+                </div>
+                <div class="animtaion__itme">
+                    <div class="spaceman zoom__shrink--repeat"></div>
+                    <p>Flipping：<span class="primary__highlight">zoom shrink</span></p>
+                </div>
+            </div>
+
+            <!-- <h2 class="primary__highlight">circle around ( Animate )</h2>
+            <div class="animation__circle--repeat">
+                <div class="animtaion__itme">
+                    <div class="spaceman spin__toLeft--repeat">
+                        <div class="spaceman spin__toLeft--repeat"></div>
+                    </div>
+                    
+                    <p>Spinning：<span class="primary__highlight">right to left </span></p>
+                </div>
+            </div> -->
         </div>
     </body>
 </html>
