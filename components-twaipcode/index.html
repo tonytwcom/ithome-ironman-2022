@@ -5,28 +5,97 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Hello World</title>
-        <link rel="stylesheet" href="../reset.css" />
-        <link rel="stylesheet" href="style.css" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-            crossorigin="anonymous"
-        />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                box-sizing: border-box;
+            }
+            html {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: auto;
+                gap: 5px;
+            }
+            textarea {
+                /* border: 2px solid red; */
+
+                width: 100%;
+                resize: none;
+                border: 1px solid gray;
+            }
+            .twzipcode {
+                /* border: 2px solid red; */
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 0 5px;
+            }
+            .btn {
+                width: 100%;
+
+                padding: 5px 0;
+                color: white;
+                background-color: #87d596;
+                border: none;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+            .btn:hover {
+                background-color: #6bd280;
+            }
+
+            .container select,
+            button,
+            textarea {
+                border: 1px solid gray;
+                width: 100%;
+                font-size: 16px;
+                padding: 10px 0;
+            }
+
+            .address {
+                width: 100%;
+            }
+        </style>
     </head>
     <body>
-        <p>Hello World</p>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-            crossorigin="anonymous"
-        ></script>
-        <script src="main.js"></script>
-    
+        <script src="https://code.essoduke.org/js/twzipcode/twzipcode.js"></script>
+
+        <div class="container">
+            <div class="twzipcode"></div>
+            <input type="text" class="address" id="address" />
+            <textarea name="" id="textarea"></textarea>
+            <button type="" id="btn" class="btn">地址產生器</button>
+        </div>
+
+        <script>
+            const twzipcode = new TWzipcode('.twzipcode');
+            twzipcode.set(970);
+            var btns = document.getElementById('btn');
+            btns.addEventListener('click', foo, false);
+
+            function foo() {
+                let county = twzipcode.get('county');
+                let get = twzipcode.get();
+                let address = document.getElementById('address');
+
+                console.log();
+
+                document.getElementById(
+                    'textarea'
+                ).value = `${get[0].zipcode} ${get[0].county}${get[0].district}${address.value}`;
+            }
+        </script>
+
+
     </body>
 </html>
