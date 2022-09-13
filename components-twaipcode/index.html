@@ -26,6 +26,7 @@
                 grid-template-columns: auto;
                 gap: 5px;
             }
+
             textarea {
                 /* border: 2px solid red; */
 
@@ -33,12 +34,14 @@
                 resize: none;
                 border: 1px solid gray;
             }
+
             .twzipcode {
                 /* border: 2px solid red; */
                 display: grid;
                 grid-template-columns: auto auto;
                 gap: 0 5px;
             }
+
             .btn {
                 width: 100%;
 
@@ -49,6 +52,7 @@
                 border-radius: 2px;
                 cursor: pointer;
             }
+
             .btn:hover {
                 background-color: #6bd280;
             }
@@ -68,34 +72,47 @@
         </style>
     </head>
     <body>
-        <script src="https://code.essoduke.org/js/twzipcode/twzipcode.js"></script>
-
-        <div class="container">
-            <div class="twzipcode"></div>
+        <!-- <div class="container">
+            <div id="twzipcode" class="twzipcode"></div>
             <input type="text" class="address" id="address" />
             <textarea name="" id="textarea"></textarea>
             <button type="" id="btn" class="btn">地址產生器</button>
-        </div>
+        </div> -->
+
+        <div id="twzipcode" class="twzipcode"></div>
+
+        <!-- <script src="https://code.essoduke.org/js/twzipcode/twzipcode.js"></script> -->
+        <!-- <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
 
         <script>
-            const twzipcode = new TWzipcode('.twzipcode');
-            twzipcode.set(970);
-            var btns = document.getElementById('btn');
-            btns.addEventListener('click', foo, false);
+            $('#twzipcode').twzipcode();
 
-            function foo() {
-                let county = twzipcode.get('county');
-                let get = twzipcode.get();
-                let address = document.getElementById('address');
+            $('#twzipcode').twzipcode({
+                zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
+                css: ['city form-control', 'town form-control'], // 自訂 "城市"、"地別" class 名稱
+                countyName: 'city', // 自訂城市 select 標籤的 name 值
+                districtName: 'town', // 自訂區別 select 標籤的 name 值
+            });
 
-                console.log();
+            // const twzipcode = new TWzipcode('.twzipcode');
+            // twzipcode.set(970);
+            // var btns = document.getElementById('btn');
+            // btns.addEventListener('click', foo, false);
 
-                document.getElementById(
-                    'textarea'
-                ).value = `${get[0].zipcode} ${get[0].county}${get[0].district}${address.value}`;
-            }
+            // function foo() {
+            //     let county = twzipcode.get('county');
+            //     let get = twzipcode.get();
+            //     let address = document.getElementById('address');
+            //     document.getElementById(
+            //         'textarea'
+            //     ).value = `${get[0].zipcode} ${get[0].county}${get[0].district}${address.value}`;
+            // }
         </script>
-
-
     </body>
 </html>
