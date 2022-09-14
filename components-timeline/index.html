@@ -5,18 +5,33 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>components-timeline</title>
-        <link rel="stylesheet" href="../reset.css" />
-        <link rel="stylesheet" href="style.css" />
-        <script src="main.js"></script>
         <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                /* overflow: hidden; */
+            }
+            html {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             body {
                 background-color: #474e5d;
                 font-family: Helvetica, sans-serif;
             }
             .timeline {
+                /* border: 2px solid red; */
+                margin: 0 auto;
+                padding: 15px;
+                width: 100vw;
                 position: relative;
                 max-width: 1200px;
             }
+
             .timeline::after {
                 content: '';
                 position: absolute;
@@ -28,6 +43,8 @@
             }
 
             .container {
+                border: 2px solid green;
+                padding: 10px 30px;
                 position: relative;
                 margin: 0 40px;
             }
@@ -47,8 +64,8 @@
 
             .content {
                 width: 100%;
-                margin: 20px 30px;
-                padding: 10px 40px;
+            
+                padding: 10px 30px;
                 border-radius: 10px;
                 background: white;
                 box-sizing: border-box;
@@ -68,42 +85,19 @@
                 border-color: transparent white transparent transparent;
             }
 
-            @media (min-width: 576px) {
-                .container {
-                    width: 100%;
-                    border: 2px solid red;
-                }
-                .content {
-                    width: 50%;
-                }
-                .right {
-                    /* left: 50%; */
-                }
-                .timeline::after {
-                    /* right: 50%; */
-                }
-                .container::after {
-                }
-                .container {
-                    width: 100%;
-                    padding-left: 70px;
-                    padding-right: 25px;
-                }
-                .left::after,
-                .right::after {
-                    left: 15px;
-                }
+            @media (min-width: 575.98px) {
             }
-            @media (min-width: 768px) and (max-width: 991.98px) {
-                /* .content {
-                    width: 50%;
-                } */
+
+            @media (min-width: 767.98px) {
             }
-            @media (min-width: 992px) and (max-width: 119.98px) {
+
+            @media (min-width: 991.98px) {
             }
-            @media (min-width: 1200px) and (max-width: 1399.98px) {
+
+            @media (min-width: 1199.98px) {
             }
-            @media (min-width: 1400px) {
+
+            @media (min-width: 1399.98px) {
             }
         </style>
     </head>
