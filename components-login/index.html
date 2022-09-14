@@ -11,7 +11,9 @@
                 padding: 0;
                 list-style: none;
                 box-sizing: border-box;
+                font-family: '微軟正黑體';
             }
+
             html,
             body {
                 width: 100%;
@@ -22,15 +24,16 @@
             }
 
             form {
-                border: 2px solid red;
                 width: 80%;
-                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .container {
-                border: 2px solid red;
                 width: 100%;
-                height: 100%;
+                height: auto;
+                padding: 0 5%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -39,7 +42,7 @@
 
             .avatar {
                 background-image: url(./bg.jpg);
-                width: 30%;
+                width: 40%;
                 border-radius: 50%;
             }
 
@@ -58,7 +61,7 @@
                 margin-bottom: 12px;
             }
 
-            .form__item {
+            /* .form__item {
                 border: 2px solid green;
             }
 
@@ -66,15 +69,46 @@
                 border: 2px solid gold;
                 width: 100%;
                 vertical-align: middle;
+            } */
+
+            .remember {
+                color: darkgrey;
+            }
+            #remember {
+                width: auto;
+            }
+            
+            .form__footer {
+                float: left;
+                background: #f1f1f1;
             }
 
-            #test{
+            .form__footer p {
+                padding: 5px 10px;
                 width: auto;
+                display: block;
+                float: right;
+            }
+
+            .form__footer button {
+                width: auto;
+                margin: 10px 0;
+                padding: 5px 10px;
+                color: white;
+                background: #f44336;
+                border-radius: 5px;
+                border: none;
+                margin: 0;
+            }
+            @media (min-width: 575.98px) {
+                .container {
+                    max-width: 700px;
+                }
             }
         </style>
     </head>
     <body>
-        <!-- <form action="" method="get">
+        <form action="" method="get">
             <div class="container">
                 <img src="./01.png" alt="avatar" class="avatar" />
                 <label for="username">Username</label>
@@ -82,18 +116,12 @@
                 <label for="password">Password</label>
                 <input type="text" name="" id="password" />
                 <button>Login</button>
+                <label class="remember"><input type="checkbox" name="remember" id="remember" /> Remember me</label>
                 <div class="form__footer">
                     <button>Cancel</button>
-                    
+                    <p>Forgot <a href="">password?</a></p>
                 </div>
             </div>
-            
-        
-        
-        </form> -->
-        <p>
-            <input type="checkbox" id="test">
-        <label for="test">123</label>
-        </p>
+        </form>
     </body>
 </html>
