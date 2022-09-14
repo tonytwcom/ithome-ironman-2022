@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-typingeffect</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                font-family: '微軟正黑體';
+            }
+            html {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">Click Me</button>
+        <div id="demo"></div>
+
+        <script>
+            let i = 0;
+            let txt =
+                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, inventore nostrum. Quaerat nostrum accusantium tenetur dolor voluptates rem at inventore tempore, quis, quidem molestias, alias saepe eveniet soluta nemo numquam.';
+            let speed = 50;
+
+            let btn = document.getElementById('btn');
+            btn.addEventListener('click', foo, false);
+
+            function foo() {
+                if (i < txt.length) {
+                    document.getElementById('demo').innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(foo, speed);
+                }
+                console.log('fdsfdsfsd');
+            }
+        </script>
+    </body>
+</html>
