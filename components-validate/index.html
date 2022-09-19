@@ -5,14 +5,58 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>components-validate</title>
+        <style>
+            #commentForm label.error {
+                margin-left: 0.5rem;
+                font-size: 14px;
+                color: red;
+            }
+        </style>
     </head>
     <body>
+        <form class="cmxform" id="commentForm" method="get" action="">
+            <fieldset>
+                <legend>Please provide your name, email address (won't be published) and a comment</legend>
+                <p>
+                    <label for="cname">Name (required, at least 2 characters)</label>
+                    <input id="cname" name="name" minlength="2" type="text" required />
+                </p>
+                <p>
+                    <label for="cemail">E-Mail (required)</label>
+                    <input id="cemail" type="email" name="email" required />
+                </p>
+                <p>
+                    <label for="curl">URL (optional)</label>
+                    <input id="curl" type="url" name="url" />
+                </p>
+                <p>
+                    <label for="ccomment">Your comment (required)</label>
+                    <textarea id="ccomment" name="comment" required></textarea>
+                </p>
+                <p>
+                    <input class="submit" type="submit" value="Submit" />
+                </p>
+            </fieldset>
+        </form>
 
-        
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
-            integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
-            crossorigin="anonymous"
-        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+        <script>
+            $('#commentForm').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 2,
+                    },
+                },
+                messages: {
+                    name: {
+                        required: 'We need your email address to contact you',
+                        minlength: jQuery.validator.format('At least {0} characters required!'),
+                    },
+                },
+            });
+        </script>
     </body>
 </html>
