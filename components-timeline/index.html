@@ -7,6 +7,7 @@
         <title>components-timeline</title>
         <style>
             * {
+                
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -19,12 +20,13 @@
                 justify-content: center;
                 align-items: center;
             }
+
             body {
                 background-color: #474e5d;
                 font-family: Helvetica, sans-serif;
             }
+
             .timeline {
-                /* border: 2px solid red; */
                 margin: 0 auto;
                 padding: 15px;
                 width: 100vw;
@@ -43,7 +45,6 @@
             }
 
             .container {
-                border: 2px solid green;
                 padding: 10px 30px;
                 position: relative;
                 margin: 0 40px;
@@ -64,11 +65,11 @@
 
             .content {
                 width: 100%;
-            
                 padding: 10px 30px;
                 border-radius: 10px;
                 background: white;
                 box-sizing: border-box;
+             
             }
 
             .left::before,
@@ -89,22 +90,50 @@
             }
 
             @media (min-width: 767.98px) {
-            }
+                .timeline::after {
+                    background-color: white;
+                    width: 6px;
+                    top: 0;
+                    right: 50%;
+                }
 
-            @media (min-width: 991.98px) {
-            }
+                .container::after {
+                    left: 50%;
+                    transform: translateX(-20px);
+                }
 
-            @media (min-width: 1199.98px) {
-            }
+                .container {
+                    border: 2px solid green;
+                    padding: 10px 30px;
+                    position: relative;
 
-            @media (min-width: 1399.98px) {
+                    margin: 0;
+                }
+                .content {
+                    width: 45%;
+                    left: 50%;
+                }
+                .right {
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(60px);
+                }
+                .right::before {
+                    top: 20px;
+                    left: -10px;
+                }
+
+                .left::before {
+                    transform: rotate(180deg);
+                    left: 45%;
+                }
             }
         </style>
     </head>
     <body>
         <div class="timeline">
-            <div class="container left">
-                <div class="content">
+            <div class="container">
+                <div class="content left">
                     <h2>2022</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
@@ -113,8 +142,8 @@
                     </p>
                 </div>
             </div>
-            <div class="container right">
-                <div class="content">
+            <div class="container">
+                <div class="content right">
                     <h2>2019</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
@@ -123,8 +152,8 @@
                     </p>
                 </div>
             </div>
-            <div class="container left">
-                <div class="content">
+            <div class="container">
+                <div class="content left">
                     <h2>2016</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
@@ -133,8 +162,8 @@
                     </p>
                 </div>
             </div>
-            <div class="container right">
-                <div class="content">
+            <div class="container">
+                <div class="content right">
                     <h2>2015</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
@@ -143,8 +172,8 @@
                     </p>
                 </div>
             </div>
-            <div class="container left">
-                <div class="content">
+            <div class="container">
+                <div class="content left">
                     <h2>2012</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
@@ -153,8 +182,8 @@
                     </p>
                 </div>
             </div>
-            <div class="container right">
-                <div class="content">
+            <div class="container">
+                <div class="content right">
                     <h2>2007</h2>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate qui sed veniam
