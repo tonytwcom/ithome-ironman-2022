@@ -1,5 +1,5 @@
 export default {
     fn() {
-        alert("fff");
+        console.log('Hello World');
     },
 };
