@@ -77,7 +77,7 @@
             #remember {
                 width: auto;
             }
-            
+
             .form__footer {
                 float: left;
                 background: #f1f1f1;
@@ -108,7 +108,7 @@
         </style>
     </head>
     <body>
-        <form action="" method="get">
+        <!-- <form action="" method="get">
             <div class="container">
                 <img src="./01.png" alt="avatar" class="avatar" />
                 <label for="username">Username</label>
@@ -122,6 +122,39 @@
                     <p>Forgot <a href="">password?</a></p>
                 </div>
             </div>
+        </form> -->
+        <form action="" method="get" id="commentForm">
+            <div class="container">
+                <img src="./01.png" alt="avatar" class="avatar" />
+                <label for="username">Username</label>
+                <input id="username" name="name" minlength="2" type="text"  />
+                <label for="password">Password</label>
+                <input type="text" name="" id="password" required />
+                <button>Login</button>
+                <label class="remember"><input type="checkbox" name="remember" id="remember" /> Remember me</label>
+                <div class="form__footer">
+                    <button>Cancel</button>
+                    <p>Forgot <a href="">password?</a></p>
+                </div>
+            </div>
         </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+        <script>
+            $('#commentForm').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 2,
+                    },
+                },
+                messages: {
+                    name: {
+                        required: 'We need your email address to contact you',
+                        minlength: jQuery.validator.format('At least {0} characters required!'),
+                    },
+                },
+            });
+        </script>
     </body>
 </html>
