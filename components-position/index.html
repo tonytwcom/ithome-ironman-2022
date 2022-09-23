@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-position</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                
+                width: 100%;
+                height: 100%;
+                background: #43c6ac; /* fallback for old browsers */
+                background: -webkit-linear-gradient(to top, #f8ffae, #43c6ac); /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(
+                    to top,
+                    #f8ffae,
+                    #43c6ac
+                ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background-repeat: no-repeat;
+            }
+            
+            .box {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                background: burlywood;
+                font-size: 3rem;
+                font-family: '微軟正黑體';
+                color: whitesmoke;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .box__static {
+                position: static;
+                left: 50%;
+            }
+
+            .box__relative {
+                position: relative;
+                left: 50%;
+            }
+
+            .box__absolute {
+                position: absolute;
+                left: 50%;
+            }
+
+            .grandfather {
+                width: 600px;
+                height: 600px;
+                border: 10px double #81899a;
+                top: 200px;
+            }
+
+            .father {
+                width: 400px;
+                height: 400px;
+                background: rgba(0, 0, 0, 0.4);
+                top: 0;
+                left: 0;
+            }
+
+            .son {
+                top: -30px;
+                left: 0;
+                /* transform: translateX(-50px); */
+                /* transform: translateY(-50px); */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <div class="box box__static">static</div>
+        <div class="box box__relative">relative</div>
+        <div class="box box__absolute">absolute</div> -->
+
+        <div class="grandfather box__static">
+            <div class="father box__static">
+                <div class="son box box__absolute">absolute</div>
+            </div>
+        </div>
+
+        <script></script>
+    </body>
+</html>
