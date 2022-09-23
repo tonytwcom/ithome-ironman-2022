@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-tab</title>
+
+        <style>
+            .tab {
+                /* overflow: hidden; */
+                border: 1px solid #ccc;
+                background-color: #f1f1f1; /* border: 2px solid red; */
+                /* display: flex; */
+            }
+
+            .tab button {
+                background-color: inherit;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.5s;
+                font-size: 1rem;
+                /* border: 2px solid red; */
+            }
+
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+            .tabcontent {
+                border: 1px solid #ccc;
+                border-top: none; /* 顏色與.tab設定相同*/
+                padding: 10px 16px;
+                text-align: justify;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablinks">content1</button>
+            <button class="tablinks">content2</button>
+            <button class="tablinks">content3</button>
+        </div>
+
+        <div id="content1" class="tabcontent">
+            <h2>content1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit cupiditate ipsa, modi facere
+                quis repudiandae cumque iste illo quae quos corrupti distinctio laudantium cum accusamus atque quo eius,
+                libero id! Nesciunt autem possimus in, iure perferendis debitis ipsam rerum deserunt delectus dolorem
+                soluta saepe perspiciatis doloribus labore aut voluptates, officiis excepturi dignissimos reiciendis
+                placeat vel, a neque exercitationem adipisci? Porro sit distinctio perspiciatis obcaecati corporis nulla
+                itaque vero, temporibus consequatur illum in ducimus sunt vitae soluta, saepe inventore ipsum unde quis
+                mollitia, explicabo perferendis. Illo, vero quo? Necessitatibus eaque atque voluptates, molestias
+                expedita excepturi, maiores voluptatem mollitia pariatur quisquam culpa quos placeat similique, amet
+                aliquid obcaecati deleniti!
+            </p>
+        </div>
+        <div id="content2" class="tabcontent">
+            <h2>content2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit cupiditate ipsa, modi facere
+                quis repudiandae cumque iste illo quae quos corrupti distinctio laudantium cum accusamus atque quo eius,
+                libero id! Nesciunt autem possimus in, iure perferendis debitis ipsam rerum deserunt delectus dolorem
+                soluta saepe perspiciatis doloribus labore aut voluptates, officiis excepturi dignissimos reiciendis
+                placeat vel, a neque exercitationem adipisci? Porro sit distinctio perspiciatis obcaecati corporis nulla
+                itaque vero, temporibus consequatur illum in ducimus sunt vitae soluta, saepe inventore ipsum unde quis
+                mollitia, explicabo perferendis. Illo, vero quo? Necessitatibus eaque atque voluptates, molestias
+                expedita excepturi, maiores voluptatem mollitia pariatur quisquam culpa quos placeat similique, amet
+                aliquid obcaecati deleniti!
+            </p>
+        </div>
+        <div id="content3" class="tabcontent">
+            <h2>content3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit cupiditate ipsa, modi facere
+                quis repudiandae cumque iste illo quae quos corrupti distinctio laudantium cum accusamus atque quo eius,
+                libero id! Nesciunt autem possimus in, iure perferendis debitis ipsam rerum deserunt delectus dolorem
+                soluta saepe perspiciatis doloribus labore aut voluptates, officiis excepturi dignissimos reiciendis
+                placeat vel, a neque exercitationem adipisci? Porro sit distinctio perspiciatis obcaecati corporis nulla
+                itaque vero, temporibus consequatur illum in ducimus sunt vitae soluta, saepe inventore ipsum unde quis
+                mollitia, explicabo perferendis. Illo, vero quo? Necessitatibus eaque atque voluptates, molestias
+                expedita excepturi, maiores voluptatem mollitia pariatur quisquam culpa quos placeat similique, amet
+                aliquid obcaecati deleniti!
+            </p>
+        </div>
+
+        <script>
+            let btn01 = document.querySelector('.tablinks');
+            let btn02 = document.querySelector('.tablinks');
+            let btn03 = document.querySelector('.tablinks');
+            btn01.addEventListener('click', openContent(event,"content1"), false);
+            btn02.addEventListener('click', openContent(event,"content2"), false);
+            btn03.addEventListener('click', openContent(event,"content3"), false);
+
+            function openContent(evt, content) {
+                let i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName('tabcontent');
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = 'none';
+                }
+                tablinks = document.getElementsByClassName('tablinks');
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(' active', '');
+                }
+                document.getElementById(content).style.display = 'block';
+                evt.currentTarget.className += ' active';
+            }
+        </script>
+    </body>
+</html>
