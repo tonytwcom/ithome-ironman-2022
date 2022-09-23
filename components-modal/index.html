@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-modal</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .btn__position {
+                width: 100%;
+            }
+
+            .btn {
+                width: 160px;
+                height: 64px;
+                background-image: linear-gradient(135deg, #6555a0 0%, #578aef 55%, #8f41e9 100%);
+                border-radius: 8px;
+                border: none;
+                color: white;
+                font-size: 28px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                /* display: none; */
+            }
+
+            .btn:hover {
+                cursor: pointer;
+                box-shadow: 5px 0 10px rgb(117, 117, 117);
+            }
+
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .modal {
+                padding: 5px;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.05), 0 2px 20px rgba(0, 0, 0, 0.1);
+                background-color: rgba(0, 0, 0, 0.4);
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                overflow: auto;
+                display: none;
+            }
+
+
+
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn" id="js-btn">Open</button>
+        <div id="modal" class="modal">
+            <div class="modal__item">
+                <span class="close">&times </span>
+                <img src="./modal.jpg" alt="" />
+                <p>
+                    該圖片由<a
+                        href="https://pixabay.com/zh/users/gdmoonkiller-4679220/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7423274"
+                        >sun jib</a
+                    >在<a
+                        href="https://pixabay.com/zh//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7423274"
+                        >Pixabay</a
+                    >上發布
+                </p>
+            </div>
+        </div>
+
+        <script>
+            let modal = document.getElementById('modal');
+            let btn = document.getElementById('js-btn');
+            let span = document.getElementsByClassName('close')[0];
+
+            btn.addEventListener('click', btnfn, false);
+            span.addEventListener('click', spanfn, false);
+
+            function btnfn() {
+                modal.style.display = 'block';
+                modal.style.boxShadow = '5px 0 10px #000 ';
+            }
+
+            function spanfn() {
+                modal.style.display = 'none';
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        </script>
+    </body>
+</html>
