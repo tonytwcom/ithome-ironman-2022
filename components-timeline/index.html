@@ -47,6 +47,7 @@
                 padding: 10px 30px;
                 position: relative;
                 margin: 0 40px;
+                animation: 1s linear 1s fade;
             }
 
             .container::after {
@@ -82,6 +83,17 @@
                 z-index: 1;
                 border-width: 10px 10px 10px 0;
                 border-color: transparent white transparent transparent;
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: 0;
+                    transform: translateY(50%);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
 
             @media (min-width: 575.98px) {
