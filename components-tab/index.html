@@ -11,7 +11,7 @@
                 /* overflow: hidden; */
                 border: 1px solid #ccc;
                 background-color: #f1f1f1; /* border: 2px solid red; */
-                /* display: flex; */
+                display: flex;
             }
 
             .tab button {
@@ -33,19 +33,24 @@
                 background-color: #ccc;
             }
 
-            .tabcontent {
+            
+            .tabcontent  {
                 border: 1px solid #ccc;
                 border-top: none; /* 顏色與.tab設定相同*/
                 padding: 10px 16px;
                 text-align: justify;
+                display: none;
+            }
+            .tabcontent .activ{
+                
             }
         </style>
     </head>
     <body>
         <div class="tab">
-            <button class="tablinks">content1</button>
-            <button class="tablinks">content2</button>
-            <button class="tablinks">content3</button>
+            <button class="tablinks" id="tab1">content1</button>
+            <button class="tablinks" id="tab2">content2</button>
+            <button class="tablinks" id="tab3">content3</button>
         </div>
 
         <div id="content1" class="tabcontent">
@@ -78,6 +83,7 @@
         </div>
         <div id="content3" class="tabcontent">
             <h2>content3</h2>
+            <img src="https://source.unsplash.com/random/300x200?sig=1" />
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit cupiditate ipsa, modi facere
                 quis repudiandae cumque iste illo quae quos corrupti distinctio laudantium cum accusamus atque quo eius,
@@ -92,15 +98,61 @@
         </div>
 
         <script>
-            let btn01 = document.querySelector('.tablinks');
-            let btn02 = document.querySelector('.tablinks');
-            let btn03 = document.querySelector('.tablinks');
-            btn01.addEventListener('click', openContent(event,"content1"), false);
-            btn02.addEventListener('click', openContent(event,"content2"), false);
-            btn03.addEventListener('click', openContent(event,"content3"), false);
+            var btn01 = document.getElementById('tab1');
+            var btn02 = document.getElementById('tab2');
+            var btn03 = document.getElementById('tab3');
 
-            function openContent(evt, content) {
-                let i, tabcontent, tablinks;
+            btn01.addEventListener(
+                'click',
+                function () {
+                    openContent(event, 'content1');
+                },
+                false
+            );
+            btn02.addEventListener(
+                'click',
+                function () {
+                    openContent(event, 'content2');
+                },
+                false
+            );
+            btn03.addEventListener(
+                'click',
+                function () {
+                    openContent(event, 'content3');
+                },
+                false
+            );
+            // btn02.addEventListener('click', openContent(event,"content2"), false);
+            // btn03.addEventListener('click', openContent(event,"content3"), false);
+let btn = document.getElementById("demo")
+btn.addEventListener('click', foo, false);
+
+// click function write out of the window.onload.
+function foo() {
+    alert('HelloWorld');
+}
+
+
+            function openContent(event, content) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName('tabcontent');
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = 'none';
+                    console.log(tabcontent[i]);
+                }
+
+                // tablinks = document.getElementsByClassName('tablinks');
+                // for (i = 0; i < tablinks.length; i++) {
+                //     tablinks[i].className = tablinks[i].className.replace(' active', '');
+                // }
+
+                document.getElementById(content).style.display = 'block';
+                // event.currentTarget.className += ' active';
+            }
+
+            function openContents(evt, content, xx) {
+                var i, tabcontent, tablinks;
                 tabcontent = document.getElementsByClassName('tabcontent');
                 for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = 'none';
@@ -111,6 +163,7 @@
                 }
                 document.getElementById(content).style.display = 'block';
                 evt.currentTarget.className += ' active';
+                
             }
         </script>
     </body>
