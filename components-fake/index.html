@@ -7,15 +7,51 @@
         <title>components-fake</title>
         <style></style>
     </head>
+
+    <style>
+        * {
+            font-family: '微軟正黑體';
+        }
+
+        body {
+            /* background: url('https://i.imgur.com/wQQl8kx.jpg') no-repeat; */
+            background: url('https://source.unsplash.com/random/1900x1200?sig=1') no-repeat;
+
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 50%;
+        }
+
+        .price {
+            font-size: 2rem;
+            letter-spacing: 15px;
+        }
+
+        .price p::before {
+            content: '$';
+            border: 2px solid red;
+        }
+    </style>
     <body>
-        <div class="container">
-            <h2>::before</h2>
-            <p>Elegant！Very Elegant！</p>
-            <p>優雅！非常優雅！</p>
-            <hr />
-            <h2>::after</h2>
-            <p>Elegant！Very Elegant！</p>
-            <p>優雅！非常優雅！</p>
+        <div class="menu">
+            <ul>
+                <li><p>好吃的飯 <span>120</span></p></li>
+                <li><p>好吃的麵 <span>120</span></p></li>
+                <li><p>好吃的肉 <span>180</span></p></li>
+                <li><p>超好吃的飯 <span>150</span></p></li>
+                <li><p>超好吃的麵 <span>150</span></p></li>
+                <li><p>超好吃的肉 <span>220</span></p></li>
+                <li><p>最好吃的飯 <span>120</span></p></li>
+                <li><p>最好吃的麵 <span>120</span></p></li>
+                <li><p>最好吃的肉 <span>180</span></p></li>
+                <li><p>普通的飯 <span>500</span></p></li>
+                . . .
+            </ul>
         </div>
     </body>
 </html>
