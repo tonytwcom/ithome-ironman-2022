@@ -7,6 +7,19 @@
         <title>components-tab</title>
 
         <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            html {
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                max-width: 960px;
+                margin: 0 auto;
+            }
             .tab {
                 /* overflow: hidden; */
                 border: 1px solid #ccc;
@@ -33,16 +46,16 @@
                 background-color: #ccc;
             }
 
-            
-            .tabcontent  {
+            .tabcontent {
                 border: 1px solid #ccc;
                 border-top: none; /* 顏色與.tab設定相同*/
                 padding: 10px 16px;
                 text-align: justify;
-                display: none;
+                /* display: none; */
             }
-            .tabcontent .activ{
-                
+
+            img {
+                width: 100%;
             }
         </style>
     </head>
@@ -55,6 +68,7 @@
 
         <div id="content1" class="tabcontent">
             <h2>content1</h2>
+            <img src="https://source.unsplash.com/random/1920x1080?sig=1" />
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit cupiditate ipsa, modi facere
                 quis repudiandae cumque iste illo quae quos corrupti distinctio laudantium cum accusamus atque quo eius,
@@ -69,6 +83,7 @@
         </div>
         <div id="content2" class="tabcontent">
             <h2>content2</h2>
+            <img src="https://source.unsplash.com/random/1920x1080?sig=2" />
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit cupiditate ipsa, modi facere
                 quis repudiandae cumque iste illo quae quos corrupti distinctio laudantium cum accusamus atque quo eius,
@@ -83,7 +98,7 @@
         </div>
         <div id="content3" class="tabcontent">
             <h2>content3</h2>
-            <img src="https://source.unsplash.com/random/300x200?sig=1" />
+            <img src="https://source.unsplash.com/random/1920x1080?sig=3" />
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora impedit cupiditate ipsa, modi facere
                 quis repudiandae cumque iste illo quae quos corrupti distinctio laudantium cum accusamus atque quo eius,
@@ -125,14 +140,13 @@
             );
             // btn02.addEventListener('click', openContent(event,"content2"), false);
             // btn03.addEventListener('click', openContent(event,"content3"), false);
-let btn = document.getElementById("demo")
-btn.addEventListener('click', foo, false);
+            let btn = document.getElementById('demo');
+            btn.addEventListener('click', foo, false);
 
-// click function write out of the window.onload.
-function foo() {
-    alert('HelloWorld');
-}
-
+            // click function write out of the window.onload.
+            function foo() {
+                alert('HelloWorld');
+            }
 
             function openContent(event, content) {
                 var i, tabcontent, tablinks;
@@ -142,29 +156,33 @@ function foo() {
                     console.log(tabcontent[i]);
                 }
 
-                // tablinks = document.getElementsByClassName('tablinks');
-                // for (i = 0; i < tablinks.length; i++) {
-                //     tablinks[i].className = tablinks[i].className.replace(' active', '');
-                // }
-
-                document.getElementById(content).style.display = 'block';
-                // event.currentTarget.className += ' active';
-            }
-
-            function openContents(evt, content, xx) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName('tabcontent');
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = 'none';
-                }
+                // code here
                 tablinks = document.getElementsByClassName('tablinks');
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].className = tablinks[i].className.replace(' active', '');
                 }
                 document.getElementById(content).style.display = 'block';
-                evt.currentTarget.className += ' active';
-                
+                event.currentTarget.className += ' active';
+
+
+
+                document.getElementById(content).style.display = 'block';
+                // event.currentTarget.className += ' active';
             }
+
+            // function openContents(evt, content, xx) {
+            //     var i, tabcontent, tablinks;
+            //     tabcontent = document.getElementsByClassName('tabcontent');
+            //     for (i = 0; i < tabcontent.length; i++) {
+            //         tabcontent[i].style.display = 'none';
+            //     }
+            //     tablinks = document.getElementsByClassName('tablinks');
+            //     for (i = 0; i < tablinks.length; i++) {
+            //         tablinks[i].className = tablinks[i].className.replace(' active', '');
+            //     }
+            //     document.getElementById(content).style.display = 'block';
+            //     evt.currentTarget.className += ' active';
+            // }
         </script>
     </body>
 </html>
