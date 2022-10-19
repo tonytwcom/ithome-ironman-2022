@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-imgoverlay</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                box-sizing: border-box;
+                font-family: '微軟正黑體';
+            }
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #222;
+            }
+
+            .container {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: auto;
+                align-items: center;
+                gap: 10px;
+                width: 80%;
+            }
+
+            .card {
+                position: relative;
+            }
+
+            img {
+                width: 100%;
+                vertical-align: middle;
+            }
+
+            .text {
+                height: 100%;
+                color: whitesmoke;
+                font-size: 2rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: rgba(255, 0, 0, 0.6);
+                overflow: hidden;
+                transition: 0.2s ease;
+            }
+
+            .overlay__toLeft {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                background-color: rgba(255, 0, 0, 0.6);
+                overflow: hidden;
+                transition: 0.2s ease;
+            }
+
+            .overlay__toRight {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: rgba(0, 255, 0, 0.6);
+                overflow: hidden;
+                transition: 0.2s ease;
+            }
+
+            .overlay__toUp {
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                height: 0;
+                background-color: rgba(0, 0, 255, 0.6);
+                overflow: hidden;
+                transition: 0.2s ease;
+            }
+
+            .overlay__toDown {
+                position: absolute;
+                bottom: 100%;
+                width: 100%;
+                height: 0;
+
+                background-color: rgba(154, 66, 212, 0.6);
+                overflow: hidden;
+                transition: 0.2s ease;
+            }
+
+            .overlay__zoom {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: scale(0);
+                background-color: rgba(197, 112, 0, 0.582);
+                overflow: hidden;
+                transition: 0.2s ease;
+            }
+
+            .card:hover .overlay__toLeft {
+                width: 100%;
+            }
+
+            .card:hover .overlay__toRight {
+                width: 100%;
+            }
+
+            .card:hover .overlay__toUp {
+                top: 0;
+                height: 100%;
+            }
+
+            .card:hover .overlay__toDown {
+                height: 100%;
+                bottom: 0;
+            }
+
+            .card:hover .overlay__zoom {
+                transform: scale(1);
+            }
+
+            @media (min-width: 575.98px) {
+                .container {
+                    grid-template-columns: auto auto;
+                }
+            }
+
+            @media (min-width: 991.98px) {
+                .container {
+                    grid-template-columns: auto auto auto auto auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <img src="https://source.unsplash.com/random/300x400?sig=1" />
+                <div class="overlay__toLeft">
+                    <div class="text">To Left</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://source.unsplash.com/random/300x400?sig=2" />
+                <div class="overlay__toRight">
+                    <div class="text">To Right</div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/random/300x400?sig=3" />
+                <div class="overlay__toUp">
+                    <div class="text">To Up</div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/random/300x400?sig=4" />
+                <div class="overlay__toDown">
+                    <div class="text">To Down</div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/random/300x400?sig=5" />
+                <div class="overlay__zoom">
+                    <div class="text">Zoom</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
