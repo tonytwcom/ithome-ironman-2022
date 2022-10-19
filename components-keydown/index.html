@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-keydown</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                background: #eee;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                position: relative;
+                background: #222;
+                width: 80%;
+                height: 80%;
+            }
+            .movebox {
+                position: absolute;
+                background: white;
+                width: 150px;
+                height: 100px;
+            }
+
+            @media (min-width: 575.98px) {
+            }
+            
+            @media (min-width: 767.98px) {
+            }
+            
+         
+            
+            @media (min-width: 1199.98px) {
+            }
+            
+            @media (min-width: 1399.98px) {
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container" id="keydown" tabindex="0">
+            <div class="movebox"></div>
+        </div>
+
+        <script>
+            const move = document.getElementById('move');
+            const mover = new absMover(move, 1);
+
+            const btn = document.getElementById('keydown');
+
+            btn.addEventListener('keydown', foo, false);
+
+            function foo(e) {
+                console.log('keydown now');
+            }
+
+            function eventKeyDown(key) {
+                switch (key) {
+                    case 37:
+                        mover.moveLeft();
+                        break;
+                    case 38:
+                        mover.moveTop();
+                        break;
+                    case 39:
+                        mover.moveRight();
+                        break;
+                    case 40:
+                        mover.moveBottom();
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>
