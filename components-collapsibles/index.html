@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-collapsibles</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            html {
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #4c6cb9;
+            }
+
+            .container {
+                width: 80%;
+                background: whitesmoke;
+            }
+
+            .collapse {
+                width: 100%;
+                padding-left: 15px;
+                text-align: start;
+                border: none;
+                background-color: #27547f;
+                color: white;
+                padding: 18px;
+                font-size: 1rem;
+            }
+
+            .collapse:hover,
+            .active {
+                background-color: #63bbd8;
+                cursor: pointer;
+            }
+
+            .collapse__items {
+                padding: 0 18px;
+                border-top: none;
+                text-align: justify;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+
+            .collapse:after {
+                content: '\002B';
+                color: white;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+            .active:after {
+                content: '\2212';
+            }
+
+            p {
+                padding: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button class="collapse">Section 1</button>
+            <div class="collapse__items">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, cupiditate necessitatibus?
+                    Soluta eaque nam laboriosam deleniti voluptatum velit qui impedit dignissimos eveniet ab harum
+                    blanditiis sunt, laborum reiciendis tempora debitis molestias est quasi omnis? Quis vitae doloremque
+                    molestias sequi sunt quidem cupiditate ducimus fugiat beatae nisi illo, eaque ad, vel velit corporis
+                    voluptas nemo laborum doloribus excepturi asperiores dicta? Culpa aperiam voluptas mollitia iure
+                    nisi eveniet ea obcaecati officia fugit eius sunt numquam, distinctio laborum repellendus
+                    perferendis! Omnis possimus quidem impedit sit recusandae, eius dolorem ullam. Cumque, quod corporis
+                    deserunt quisquam architecto dolore earum unde. Quisquam obcaecati ipsum eaque enim.
+                </p>
+            </div>
+
+            <button class="collapse">Section 2</button>
+            <div class="collapse__items">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, cupiditate necessitatibus?
+                    Soluta eaque nam laboriosam deleniti voluptatum velit qui impedit dignissimos eveniet ab harum
+                    blanditiis sunt, laborum reiciendis tempora debitis molestias est quasi omnis? Quis vitae doloremque
+                    molestias sequi sunt quidem cupiditate ducimus fugiat beatae nisi illo, eaque ad, vel velit corporis
+                    voluptas nemo laborum doloribus excepturi asperiores dicta? Culpa aperiam voluptas mollitia iure
+                    nisi eveniet ea obcaecati officia fugit eius sunt numquam, distinctio laborum repellendus
+                    perferendis! Omnis possimus quidem impedit sit recusandae, eius dolorem ullam. Cumque, quod corporis
+                    deserunt quisquam architecto dolore earum unde. Quisquam obcaecati ipsum eaque enim.
+                </p>
+            </div>
+
+            <button class="collapse">Section 3</button>
+            <div class="collapse__items">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, cupiditate necessitatibus?
+                    Soluta eaque nam laboriosam deleniti voluptatum velit qui impedit dignissimos eveniet ab harum
+                    blanditiis sunt, laborum reiciendis tempora debitis molestias est quasi omnis? Quis vitae doloremque
+                    molestias sequi sunt quidem cupiditate ducimus fugiat beatae nisi illo, eaque ad, vel velit corporis
+                    voluptas nemo laborum doloribus excepturi asperiores dicta? Culpa aperiam voluptas mollitia iure
+                    nisi eveniet ea obcaecati officia fugit eius sunt numquam, distinctio laborum repellendus
+                    perferendis! Omnis possimus quidem impedit sit recusandae, eius dolorem ullam. Cumque, quod corporis
+                    deserunt quisquam architecto dolore earum unde. Quisquam obcaecati ipsum eaque enim.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            var btn = document.getElementsByClassName('collapse');
+            var i;
+
+            for (i = 0; i < btn.length; i++) {
+                btn[i].addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
