@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>components-selectors</title>
+        <link rel="stylesheet" href="../reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                /* list-style: none; */
+                box-sizing: border-box;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                background: #eee;
+            }
+
+            h1 {
+                text-align: center;
+                padding: 20px;
+                background-color: rgb(56, 55, 55);
+                color: rgb(231, 231, 139);
+                font-size: 2rem;
+            }
+
+            h3 {
+                line-height: 3rem;
+                font-size: 1.5rem;
+                text-align: center;
+                background-color: rgb(56, 55, 55);
+                color: rgb(231, 231, 139);
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .selector {
+
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: auto;
+                gap: 10px;
+            }
+
+            .card {
+                width: 100%;
+                border: 1px solid black;
+            }
+
+            .item {
+                padding: 25px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>CSS Selectors</h1>
+        </div>
+        <div class="container">
+            <div class="selector">
+                <div class="card">
+                    <h3>test</h3>
+                    <div class="item">
+                        <ul>
+                            <li>123</li>
+                            <li>123</li>
+                            <li>123</li>
+                            <li>123</li>
+                            <li>123</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>test</h3>
+                    <div class="item">
+                        <ul>
+                            <li>123</li>
+                            <li>123</li>
+                            <li>123</li>
+                            <li>123</li>
+                            <li>123</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
